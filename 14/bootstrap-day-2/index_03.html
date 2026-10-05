@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Day 1</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container">
+        <!-- Brand -->
+        <a href="#" class="navbar-brand"> My Website </a>
+        <!-- Mobile Toggle Button -->
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="menu">
+          <!-- Main Menu -->
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Portfolio</a></li>
+            <!-- Service Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Service
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Service One</a></li>
+                <li><a href="#" class="dropdown-item">Service Two</a></li>
+                <li><a href="#" class="dropdown-item">Service Three</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          </ul>
+          <!-- Login / Signup -->
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Signup</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="1800"
+      id="carousel-slide-prev-next"
+    >
+      <!-- standard time : 1800 - 2200 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="img/slider-1.jpg"
+            alt="slider-1"
+            class="w-100"
+            height="600"
+          />
+          <!-- carousel-caption  -->
+          <div class="carousel-caption bg-dark bg-opacity-50">
+            <h1>This is carousel one caption</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              temporibus aliquid, accusamus id veniam excepturi quaerat
+              consequatur, inventore magnam hic blanditiis suscipit sint nostrum
+              cumque ducimus sit, aliquam repellendus esse.
+            </p>
+            <a href="" class="btn btn-success"> Read More </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/slider-2.jpg"
+            alt="slider-2"
+            class="w-100"
+            height="600"
+          />
+          <!-- carousel-caption  -->
+          <div class="carousel-caption bg-dark bg-opacity-50">
+            <h1>This is carousel one caption</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              temporibus aliquid, accusamus id veniam excepturi quaerat
+              consequatur, inventore magnam hic blanditiis suscipit sint nostrum
+              cumque ducimus sit, aliquam repellendus esse.
+            </p>
+            <a href="" class="btn btn-success"> Read More </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/slider-3.jpg"
+            alt="slider-3"
+            class="w-100"
+            height="600"
+          />
+          <!-- carousel-caption  -->
+          <div class="carousel-caption bg-dark bg-opacity-50">
+            <h1>This is carousel one caption</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              temporibus aliquid, accusamus id veniam excepturi quaerat
+              consequatur, inventore magnam hic blanditiis suscipit sint nostrum
+              cumque ducimus sit, aliquam repellendus esse.
+            </p>
+            <a href="" class="btn btn-success"> Read More </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/slider-4.jpg"
+            alt="slider-4"
+            class="w-100"
+            height="600"
+          />
+          <!-- carousel-caption  -->
+          <div class="carousel-caption bg-dark bg-opacity-50">
+            <h1>This is carousel one caption</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              temporibus aliquid, accusamus id veniam excepturi quaerat
+              consequatur, inventore magnam hic blanditiis suscipit sint nostrum
+              cumque ducimus sit, aliquam repellendus esse.
+            </p>
+            <a href="" class="btn btn-success"> Read More </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/slider-5.jpg"
+            alt="slider-5"
+            class="w-100"
+            height="600"
+          />
+          <!-- carousel-caption  -->
+          <div class="carousel-caption bg-dark bg-opacity-50">
+            <h1>This is carousel one caption</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              temporibus aliquid, accusamus id veniam excepturi quaerat
+              consequatur, inventore magnam hic blanditiis suscipit sint nostrum
+              cumque ducimus sit, aliquam repellendus esse.
+            </p>
+            <a href="" class="btn btn-success"> Read More </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/slider-6.jpg"
+            alt="slider-6"
+            class="w-100"
+            height="600"
+          />
+          <!-- carousel-caption  -->
+          <div class="carousel-caption bg-dark bg-opacity-50">
+            <h1>This is carousel one caption</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              temporibus aliquid, accusamus id veniam excepturi quaerat
+              consequatur, inventore magnam hic blanditiis suscipit sint nostrum
+              cumque ducimus sit, aliquam repellendus esse.
+            </p>
+            <a href="" class="btn btn-success"> Read More </a>
+          </div>
+        </div>
+      </div>
+      <!-- carousel-control-previous-button  -->
+      <a
+        href="#carousel-slide-prev-next"
+        class="carousel-control-prev"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <!-- carousel-control-right-button  -->
+      <a
+        href="#carousel-slide-prev-next"
+        class="carousel-control-next"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+    <section class="bg-danger-subtle py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">This is card header</div>
+              <div class="card-body">
+                <!-- This is card body -->
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ullam, debitis recusandae! Fugiat sequi suscipit id
+                  dignissimos totam non odit? Odio repudiandae similique
+                  asperiores eligendi voluptas dolore sint suscipit. Facere,
+                  inventore!
+                </p>
+              </div>
+              <div class="card-footer">
+                <!-- This is card footer -->
+                <a href="" class="btn btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">This is card header</div>
+              <div class="card-body">
+                <!-- This is card body -->
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ullam, debitis recusandae! Fugiat sequi suscipit id
+                  dignissimos totam non odit? Odio repudiandae similique
+                  asperiores eligendi voluptas dolore sint suscipit. Facere,
+                  inventore!
+                </p>
+              </div>
+              <div class="card-footer">
+                <!-- This is card footer -->
+                <a href="" class="btn btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">This is card header</div>
+              <div class="card-body">
+                <!-- This is card body -->
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Ullam, debitis recusandae! Fugiat sequi suscipit id
+                  dignissimos totam non odit? Odio repudiandae similique
+                  asperiores eligendi voluptas dolore sint suscipit. Facere,
+                  inventore!
+                </p>
+              </div>
+              <div class="card-footer">
+                <!-- This is card footer -->
+                <a href="" class="btn btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-body">
+              <h4 class="text-center mb-3">Some Heading Content</h4>
+              <ul>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-body">
+              <h4 class="text-center mb-3">Some Heading Content</h4>
+              <ul>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-body">
+              <h4 class="text-center mb-3">Some Heading Content</h4>
+              <ul>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+                <li>This is sub content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-danger-subtle py-5">
+      <div class="container">
+        <div class="row">
+          <!-- card 1 -->
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/13886741/pexels-photo-13886741.jpeg?_gl=1*1ef04kg*_ga*MTU1ODg0NDU3NS4xNzkxMTc1MTIz*_ga_8JE65Q40S6*czE3OTExNzUxMjMkbzEkZzEkdDE3OTExNzUzODYkajI3JGwwJGgw"
+                alt=""
+                height="250"
+              />
+              <div class="card-body">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quibusdam eos, accusamus quod distinctio rerum, et inventore
+                  sit modi aliquid eaque deserunt. Ab ratione qui eveniet
+                  quisquam unde quaerat quae at.
+                </p>
+                <p>Tk. 500000/-</p>
+                <a href="" class="btn-btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/9867096/pexels-photo-9867096.jpeg"
+                alt=""
+                height="250"
+              />
+              <div class="card-body">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Velit animi officiis eius cum error? Voluptatum ea magni nam
+                  doloribus, similique odit vitae libero, praesentium
+                  laudantium, autem nulla temporibus laborum natus?
+                </p>
+                <p>Tk. 500000/-</p>
+                <a href="" class="btn-btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/31059294/pexels-photo-31059294.jpeg"
+                alt=""
+                height="250"
+              />
+              <div class="card-body">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Velit animi officiis eius cum error? Voluptatum ea magni nam
+                  doloribus, similique odit vitae libero, praesentium
+                  laudantium, autem nulla temporibus laborum natus?
+                </p>
+                <p>Tk. 500000/-</p>
+                <a href="" class="btn-btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+          <!-- card 4 -->
+          <div class="col-md-3 col-sm-6">
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/11216260/pexels-photo-11216260.jpeg"
+                alt=""
+                height="250"
+              />
+              <div class="card-body">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Velit animi officiis eius cum error? Voluptatum ea magni nam
+                  doloribus, similique odit vitae libero, praesentium
+                  laudantium, autem nulla temporibus laborum natus?
+                </p>
+                <p>Tk. 500000/-</p>
+                <a href="" class="btn-btn-success"> Read More </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- left card 1 -->
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="row">
+                <div class="col-4">
+                  <img src="img/slider-1.jpg" alt="" class="w-100 h-100" />
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Magnam quisquam ipsam doloremque nisi sit, fugit nam
+                      quaerat culpa nemo provident autem neque corrupti nobis
+                      atque harum, reprehenderit aliquam suscipit officiis?
+                    </p>
+                    <a href="" class="btn btn-success"> Read More </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- right card 2 -->
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="row">
+                <div class="col-4">
+                  <img src="img/slider-1.jpg" alt="" class="w-100 h-100" />
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Magnam quisquam ipsam doloremque nisi sit, fugit nam
+                      quaerat culpa nemo provident autem neque corrupti nobis
+                      atque harum, reprehenderit aliquam suscipit officiis?
+                    </p>
+                    <a href="" class="btn btn-success"> Read More </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-danger-subtle py-5">
+      <div class="container">
+        <div class="row">
+          <!-- 1 -->
+          <div class="col-sm-6">
+            <div class="card">
+              <img src="img/slider-1.jpg" alt="" height="500" />
+              <div class="card-img-overlay">
+                <h3
+                  class="bg-dark bg-opacity-0 text-white position-absolute bottom-0 start-0 mb-0 text-center w-100 py-3"
+                >
+                  আর্জেন্টিনা দলে শেষবারের অনুশীলনে মেসি
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="col-sm-6">
+            <div class="card">
+              <img src="img/slider-1.jpg" alt="" height="500" />
+              <div class="card-img-overlay">
+                <h3
+                  class="bg-dark bg-opacity-0 text-white position-absolute bottom-0 start-0 mb-0 text-center w-100 py-3"
+                >
+                  আর্জেন্টিনা দলে শেষবারের অনুশীলনে মেসি
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card card-body border-0">
+              <img
+                src="https://media.prothomalo.com/prothomalo-bangla%2F2026-10-02%2Fs66dswln%2FJemsNagar-BaulDipu01102610.jpg?rect=552%2C0%2C3266%2C2177&w=622&auto=format%2Ccompress&fmt=avif"
+                alt=""
+                class="w-100"
+                height="300"
+              />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card card-body border-0">
+              <h2 class="mb-3">জেমসের অজানা জীবন</h2>
+              <p>
+                মঞ্চে উঠলেই তিনি ‘গুরু’। গিটার হাতে দাঁড়ালে হাজারো মানুষ একসঙ্গে
+                গেয়ে ওঠে তাঁর গান। ‘সিনায় সিনায় লাগে টান’ থেকে ‘তারায় তারায়
+                রটিয়ে দেব’—তাঁর গানের সঙ্গে একাধিক প্রজন্মের বেড়ে ওঠা। অথচ
+                মঞ্চের আলো নিভে গেলে সেই জেমসই যেন হঠাৎ অদৃশ্য হয়ে যান। কোথায়
+                থাকেন, কী করেন, কীভাবে কাটান সময়—এসব নিয়ে কৌতূহল থাকলেও
+                ব্যক্তিজীবন নিয়ে বরাবরই আড়ালে থেকেছেন তিনি।
+              </p>
+              <a
+                href="https://www.prothomalo.com/entertainment/song/j7xuu99geg"
+                target="_blank"
+                class="btn btn-success"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card card-body border-0">
+              <h2 class="mb-3">
+                ৩০ ডলারে কেনা চিত্রকর্ম বিক্রি হলো সাড়ে ১৩ লাখ ডলারে
+              </h2>
+              <p>
+                যুক্তরাষ্ট্রের মিশিগান অঙ্গরাজ্যে এক এস্টেট সেলে ঘুরে ঘুরে
+                ধুলাবালু ঘেঁটে মাত্র ৩০ ডলার (বাংলাদেশি টাকায় প্রায় ৩ হাজার ৬৮০
+                টাকা) দিয়ে একটি পুরোনো চিত্রকর্ম কিনেছিলেন এক ‘ট্রেজার হান্টার’
+                বা রত্ন সংগ্রাহক। তখন হয়তো তিনি নিজেও ভাবেননি, পানির দরে কেনা এই
+                সাধারণ ক্যানভাসটিই তাঁকে এক রাতে কোটিপতি বানিয়ে দেবে। এস্টেট
+                সেলের জন্য রাখা অন্য মালপত্রের ভেতর অবহেলায় পড়ে থাকা চিত্রকর্মটি
+                যুক্তরাষ্ট্রের শিকাগোর পরাবাস্তববাদী চিত্রশিল্পী গারট্রুড
+                অ্যাবারক্রমবির আঁকা। দীর্ঘদিন ধরে এই চিত্রকর্ম নিখোঁজ ছিল।
+                সম্প্রতি ফ্রিম্যানস অকশনসে চিত্রকর্মটি নিলামে তোলা হয়। ওই নিলামে
+                চিত্রকর্মটি সাড়ে ১৩ লাখ ডলারে বিক্রি হয়েছে; বাংলাদেশি মুদ্রায় যা
+                সাড়ে ১৬ কোটি টাকার বেশি।
+              </p>
+              <a
+                href="https://www.prothomalo.com/world/usa/l5njvt7nda"
+                target="_blank"
+                class="btn btn-success"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card card-body border-0">
+              <img src="img/slider-3.jpg" alt="" class="w-100" height="300" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>
