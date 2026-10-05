@@ -53,7 +53,11 @@
           </ul>
           <!-- Login / Signup -->
           <ul class="navbar-nav">
-            <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+            <li class="nav-item">
+              <a href="#loginModal" class="nav-link" data-bs-toggle="modal"
+                >Login</a
+              >
+            </li>
             <li class="nav-item"><a href="#" class="nav-link">Signup</a></li>
           </ul>
         </div>
@@ -549,6 +553,295 @@
         </div>
       </div>
     </section>
+
+    <section class="py-5 bg-success-subtle">
+      <div class="container">
+        <div class="row">
+          <!-- card 1 -->
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <h4>This is Nav/Tabs</h4>
+              </div>
+              <div class="card-body">
+                <ul class="nav nav-tabs">
+                  <li>
+                    <a
+                      href="#description"
+                      class="nav-link active"
+                      data-bs-toggle="tab"
+                      >Description</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#specification"
+                      data-bs-toggle="tab"
+                      class="nav-link"
+                      >Specification</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#review" data-bs-toggle="tab" class="nav-link"
+                      >Review</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="description">
+                    <h1>This is Description</h1>
+                    <p>
+                      জেমসের অজানা জীবন মঞ্চে উঠলেই তিনি ‘গুরু’। গিটার হাতে
+                      দাঁড়ালে হাজারো মানুষ একসঙ্গে গেয়ে ওঠে তাঁর গান। ‘সিনায়
+                      সিনায় লাগে টান’ থেকে ‘তারায় তারায় রটিয়ে দেব’—তাঁর গানের
+                      সঙ্গে একাধিক প্রজন্মের বেড়ে ওঠা। অথচ মঞ্চের আলো নিভে গেলে
+                      সেই জেমসই যেন হঠাৎ অদৃশ্য হয়ে যান। কোথায় থাকেন, কী করেন,
+                      কীভাবে কাটান সময়—এসব নিয়ে কৌতূহল থাকলেও ব্যক্তিজীবন নিয়ে
+                      বরাবরই আড়ালে থেকেছেন তিনি।
+                    </p>
+                  </div>
+                  <div class="tab-pane fade show" id="specification">
+                    <h1>This is Specification</h1>
+                    <p>
+                      ৩০ ডলারে কেনা চিত্রকর্ম বিক্রি হলো সাড়ে ১৩ লাখ ডলারে
+                      যুক্তরাষ্ট্রের মিশিগান অঙ্গরাজ্যে এক এস্টেট সেলে ঘুরে ঘুরে
+                      ধুলাবালু ঘেঁটে মাত্র ৩০ ডলার (বাংলাদেশি টাকায় প্রায় ৩
+                      হাজার ৬৮০ টাকা) দিয়ে একটি পুরোনো চিত্রকর্ম কিনেছিলেন এক
+                      ‘ট্রেজার হান্টার’ বা রত্ন সংগ্রাহক। তখন হয়তো তিনি নিজেও
+                      ভাবেননি, পানির দরে কেনা এই সাধারণ ক্যানভাসটিই তাঁকে এক
+                      রাতে কোটিপতি বানিয়ে দেবে। এস্টেট সেলের জন্য রাখা অন্য
+                      মালপত্রের ভেতর অবহেলায় পড়ে থাকা চিত্রকর্মটি যুক্তরাষ্ট্রের
+                      শিকাগোর পরাবাস্তববাদী চিত্রশিল্পী গারট্রুড অ্যাবারক্রমবির
+                      আঁকা। দীর্ঘদিন ধরে এই চিত্রকর্ম নিখোঁজ ছিল। সম্প্রতি
+                      ফ্রিম্যানস অকশনসে চিত্রকর্মটি নিলামে তোলা হয়। ওই নিলামে
+                      চিত্রকর্মটি সাড়ে ১৩ লাখ ডলারে বিক্রি হয়েছে; বাংলাদেশি
+                      মুদ্রায় যা সাড়ে ১৬ কোটি টাকার বেশি।
+                    </p>
+                  </div>
+                  <div class="tab-pane fade show" id="review">
+                    <h1>This is Review</h1>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Sequi fugiat eveniet nam ratione enim sapiente dolores
+                      iure laudantium minus sed debitis voluptas aliquam
+                      repudiandae explicabo, in accusamus molestias maiores
+                      nemo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-header">
+                <h4>This is Nav/Tabs</h4>
+              </div>
+              <div class="card-body">
+                <ul class="nav nav-pills">
+                  <li>
+                    <a
+                      href="#Description"
+                      class="nav-link active"
+                      data-bs-toggle="pill"
+                      >Description</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#Specification"
+                      data-bs-toggle="pill"
+                      class="nav-link"
+                      >Specification</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#Review" data-bs-toggle="pill" class="nav-link"
+                      >Review</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="Description">
+                    <h1>This is Description</h1>
+                    <p>
+                      জেমসের অজানা জীবন মঞ্চে উঠলেই তিনি ‘গুরু’। গিটার হাতে
+                      দাঁড়ালে হাজারো মানুষ একসঙ্গে গেয়ে ওঠে তাঁর গান। ‘সিনায়
+                      সিনায় লাগে টান’ থেকে ‘তারায় তারায় রটিয়ে দেব’—তাঁর গানের
+                      সঙ্গে একাধিক প্রজন্মের বেড়ে ওঠা। অথচ মঞ্চের আলো নিভে গেলে
+                      সেই জেমসই যেন হঠাৎ অদৃশ্য হয়ে যান। কোথায় থাকেন, কী করেন,
+                      কীভাবে কাটান সময়—এসব নিয়ে কৌতূহল থাকলেও ব্যক্তিজীবন নিয়ে
+                      বরাবরই আড়ালে থেকেছেন তিনি।
+                    </p>
+                  </div>
+                  <div class="tab-pane fade show" id="Specification">
+                    <h1>This is Specification</h1>
+                    <p>
+                      ৩০ ডলারে কেনা চিত্রকর্ম বিক্রি হলো সাড়ে ১৩ লাখ ডলারে
+                      যুক্তরাষ্ট্রের মিশিগান অঙ্গরাজ্যে এক এস্টেট সেলে ঘুরে ঘুরে
+                      ধুলাবালু ঘেঁটে মাত্র ৩০ ডলার (বাংলাদেশি টাকায় প্রায় ৩
+                      হাজার ৬৮০ টাকা) দিয়ে একটি পুরোনো চিত্রকর্ম কিনেছিলেন এক
+                      ‘ট্রেজার হান্টার’ বা রত্ন সংগ্রাহক। তখন হয়তো তিনি নিজেও
+                      ভাবেননি, পানির দরে কেনা এই সাধারণ ক্যানভাসটিই তাঁকে এক
+                      রাতে কোটিপতি বানিয়ে দেবে। এস্টেট সেলের জন্য রাখা অন্য
+                      মালপত্রের ভেতর অবহেলায় পড়ে থাকা চিত্রকর্মটি যুক্তরাষ্ট্রের
+                      শিকাগোর পরাবাস্তববাদী চিত্রশিল্পী গারট্রুড অ্যাবারক্রমবির
+                      আঁকা। দীর্ঘদিন ধরে এই চিত্রকর্ম নিখোঁজ ছিল। সম্প্রতি
+                      ফ্রিম্যানস অকশনসে চিত্রকর্মটি নিলামে তোলা হয়। ওই নিলামে
+                      চিত্রকর্মটি সাড়ে ১৩ লাখ ডলারে বিক্রি হয়েছে; বাংলাদেশি
+                      মুদ্রায় যা সাড়ে ১৬ কোটি টাকার বেশি।
+                    </p>
+                  </div>
+                  <div class="tab-pane fade show" id="Review">
+                    <h1>This is Review</h1>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Sequi fugiat eveniet nam ratione enim sapiente dolores
+                      iure laudantium minus sed debitis voluptas aliquam
+                      repudiandae explicabo, in accusamus molestias maiores
+                      nemo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="modal fade" id="loginModal">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">This is modal header</div>
+          <div class="modal-body">This is modal body</div>
+          <div class="modal-footer">This is modal footer</div>
+        </div>
+      </div>
+    </div> -->
+
+    <div
+      class="modal fade"
+      id="loginModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- This is modal header -->
+            <h4>Login Form</h4>
+            <button class="btn-close" data-bs-dismiss="modal">
+              <span class=""></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- This is modal body -->
+            <div class="card card-body">
+              <form action="" method="post">
+                <div class="row mb-3">
+                  <label class="col-md-3"> Email Adress </label>
+                  <div class="col-md-9">
+                    <input type="email" name="" id="" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-md-3"> Password </label>
+                  <div class="col-md-9">
+                    <input type="email" name="" id="" class="form-control" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <input
+                      type="button"
+                      class="btn btn-success"
+                      value="Login"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- This is modal footer -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <section class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-body">
+                <h3>My Website Name</h3>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                  ex porro, recusandae eveniet fugiat sapiente eos adipisci
+                  debitis et mollitia! Aliquam tempore ipsum distinctio beatae
+                  ullam debitis neque iusto dolor. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Ducimus, est rem adipisci cum
+                  minima unde, itaque aliquid quas voluptates porro totam
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-body">
+                <h3>Emergency Link</h3>
+                <ul>
+                  <li><a href="">Page Link One</a></li>
+                  <li><a href="">Page Link One</a></li>
+                  <li><a href="">Page Link One</a></li>
+                  <li><a href="">Page Link One</a></li>
+                  <li><a href="">Page Link One</a></li>
+                  <li><a href="">Page Link One</a></li>
+                  <li><a href="">Page Link One</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h3>Follow us on</h3>
+              <form action="" method="post">
+                <div class="mb-3">
+                  <label for="">Full Name</label>
+                  <input type="text" name="" id="" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="">Email</label>
+                  <input type="email" name="" id="" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for=""></label>
+                  <input
+                    type="button"
+                    name=""
+                    id=""
+                    class="btn btn-success"
+                    value="Subscribe"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-secondary py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <p class="mb-0 text-white text-center">
+                Copyright@NIYD Diploma in WEB Batch 5
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
 
     <!-- Bootstrap JavaScript -->
     <script src="js/bootstrap.bundle.js"></script>
