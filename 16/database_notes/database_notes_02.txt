@@ -753,3 +753,50 @@ where department = 'tourism';
 -
 
 
+alter table students
+change department department_name varchar (50);
+
+
+
+-
+56
+-
+
+alter table students
+add age int check (age > 10);
+
+
+-
+57
+-
+
+UPDATE students
+SET age=8
+WHERE id=3;
+
+
+-
+58
+-
+
+UPDATE students
+SET age=9
+WHERE id=3;
+
+
+
+-
+59
+-
+
+
+use pd;
+alter table students
+add status varchar (20) DEFAULT 'active';
+
+
+-
+60
+-
+
+
