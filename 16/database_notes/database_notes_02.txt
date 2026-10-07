@@ -652,3 +652,75 @@ SELECT * FROM products ORDER BY name DESC;
 -
 
 
+USE pd;
+SELECT * FROM products WHERE price BETWEEN 20000.00 AND 21000.00;
+
+
+-
+49
+-
+
+use pd;
+
+CREATE TABLE students (
+	id int,
+    name varchar (50),
+    email varchar (40),
+    department varchar (30)
+);
+
+
+-
+50
+-
+
+
+
+use pd;
+
+CREATE TABLE students (
+	id int,
+    name varchar (50),
+    email varchar (40),
+    department varchar (30)
+);
+
+
+INSERT INTO students (id, name, email, department)
+VALUES 
+(1, 'r_name', 'r_name@email.com', 'r_cse'),
+(2, 'a_name', 'a_name@email.com', 'a_bba'),
+(3, 'b_name', 'b_name@email.com', 'b_ict');
+
+
+
+
+-
+51
+-
+
+
+
+use pd;
+
+INSERT INTO students (id, name, email, department)
+VALUES 
+(1, 'r_name', 'r_name@email.com', 'r_cse'),
+(2, 'a_name', 'a_name@email.com', 'a_bba'),
+(3, 'b_name', 'b_name@email.com', 'b_ict');
+
+
+
+
+-
+52
+-
+
+
+use pd;
+
+INSERT INTO students (id, name, email, department)
+VALUES 
+(1, 'r_name', 'r_name@email.com', 'r_cse'),
+(2, 'a_name', 'a_name@email.com', 'a_bba'),
+(3, 'b_name', 'b_name@email.com', 'b_ict');
