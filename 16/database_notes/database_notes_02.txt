@@ -800,3 +800,69 @@ add status varchar (20) DEFAULT 'active';
 -
 
 
+-- create
+CREATE TABLE EMPLOYEES (
+  empId INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  email varchar (50) NOT NULL,
+  designation varchar (50) NOT NULL, 
+  dept TEXT NOT NULL,
+  salary decimal(10,2)
+
+);
+
+-- insert
+INSERT INTO EMPLOYEES VALUES (0001, 'Clark', 'clark@gmail.com', 'Salesman', 'Sales', 9000.00);
+INSERT INTO EMPLOYEES VALUES (0002, 'Dave', 'dave@gmail.com', 'Accountant', 'Accounting', 30000.00);
+INSERT INTO EMPLOYEES VALUES (0003, 'Ava', 'ava@gmail.com', 'Sales-Woman', 'Sales', 23000.00);
+INSERT INTO EMPLOYEES VALUES (0004, 'Diana', 'diana@gmail.com', 'Assistant Director', 'Film', 45000.00);
+
+-- fetch 
+-- SELECT * FROM EMPLOYEES;
+
+-- SHOW RECORD which employees salary greater than 10000
+SELECT * FROM EMPLOYEES WHERE salary > 10000;
+
+-- show RECORD which employees designation Assistant Director
+SELECT * FROM EMPLOYEES WHERE designation='Assistant Director';
+
+
+
+-
+61
+-
+
+
+-- create
+CREATE TABLE EMPLOYEES (
+  empId INTEGER PRIMARY KEY AUTO_INCREMENT,
+  name TEXT NOT NULL,
+  email varchar (50) unique NOT NULL,
+  designation varchar (50) NOT NULL, 
+  dept TEXT NOT NULL,
+  salary decimal(10,2)
+
+);
+
+-- insert
+INSERT INTO EMPLOYEES VALUES ('Clark', 'clark@gmail.com', 'Salesman', 'Sales', 9000.00);
+INSERT INTO EMPLOYEES VALUES ('Dave', 'dave@gmail.com', 'Accountant', 'Accounting', 30000.00);
+INSERT INTO EMPLOYEES VALUES ('Ava', 'ava@gmail.com', 'Sales-Woman', 'Sales', 23000.00);
+INSERT INTO EMPLOYEES VALUES ('Diana', 'diana@gmail.com', 'Assistant Director', 'Film', 45000.00);
+
+-- fetch 
+SELECT * FROM EMPLOYEES;
+
+-- SHOW RECORD which employees salary greater than 10000
+SELECT * FROM EMPLOYEES WHERE salary > 10000;
+
+-- show RECORD which employees designation Assistant Director
+SELECT * FROM EMPLOYEES WHERE designation='Assistant Director';
+
+
+
+-
+62
+-
+
+
