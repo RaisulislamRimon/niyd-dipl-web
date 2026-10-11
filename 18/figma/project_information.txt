@@ -4,3 +4,19 @@
 3   Competitor Analysis
 4   Figma Design
 5   
+
+
+ux part:
+  client Requirement Analysis & Project Proposal
+  Competitor Analysis
+  self Analysis
+
+
+e-commerce
+  Project Requirement |  client Requirement Analysis & Project Proposal
+  related website Analysis & Competitor Analysis
+  self Analysis
+  sketch Design
+  figma Design
+
+  
