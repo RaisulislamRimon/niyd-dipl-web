@@ -1,0 +1,4 @@
+font size 
+heading 1 - 96px
+heading 2 - 64px
+
