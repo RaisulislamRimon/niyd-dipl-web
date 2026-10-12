@@ -1,0 +1,35 @@
+.wrapper{
+    border: 1px solid red ;
+    height: 1000px;
+    width: 900px ;
+    margin: auto;
+}
+
+.row-1{
+height: 100px;
+width: 100%;
+border-bottom: 1px solid red ;
+
+}
+
+.row-2{
+height: 100px;
+width: 100%;
+border-bottom: 1px solid red ;
+
+}
+
+.row-1 .logo {
+    height: 100px;
+    width: 20%;
+    border-right: 1px solid red;
+}
+
+.logo{
+
+
+}
+
+.title{
+
+}
