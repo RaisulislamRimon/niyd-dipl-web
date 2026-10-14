@@ -866,3 +866,111 @@ SELECT * FROM EMPLOYEES WHERE designation='Assistant Director';
 -
 
 
+CREATE DATABASE product_db;
+
+USE product_db;
+
+CREATE TABLE category (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	NAME VARCHAR(50) NOT NULL,
+	CODE VARCHAR(50)
+);
+
+
+CREATE TABLE products (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	NAME VARCHAR(50) NOT NULL,
+	category_id INT,
+	FOREIGN KEY (category_id) REFERENCES category(id),
+	sku_number VARCHAR(20) UNIQUE,
+	price DECIMAL(10,2) NOT NULL
+);
+
+
+SELECT COUNT(*) FROM employee;
+
+SELECT COUNT(*) FROM employee;
+
+SELECT COUNT(*) AS total_employee FROM employee;
+
+
+select sum (salary) as total_salary from employee;
+
+
+
+-
+63
+-
+
+
+
+-- =========================================
+-- 1. CREATE DATABASE
+-- =========================================
+
+CREATE DATABASE hello;
+
+-- Select the database
+USE hello;
+
+
+-- =========================================
+-- 2. CREATE EMPLOYEE TABLE
+-- =========================================
+
+CREATE TABLE employee (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    department VARCHAR(50) NOT NULL,
+    salary DECIMAL(10,2),
+    hire_date DATE,
+    city VARCHAR(50)
+);
+
+
+-- =========================================
+-- 3. INSERT SAMPLE EMPLOYEE DATA
+-- =========================================
+
+-- employee_id is omitted because it is AUTO_INCREMENT
+INSERT INTO employee
+    (first_name, last_name, department, salary, hire_date, city)
+VALUES
+    ('John', 'Doe', 'Science', 23000.00, '2023-01-15', 'Dhaka'),
+    ('Jane', 'Smith', 'IT', 35000.00, '2022-06-10', 'Tangail'),
+    ('Michael', 'Brown', 'HR', 28000.00, '2024-03-20', 'Gazipur'),
+    ('Sarah', 'Wilson', 'Finance', 40000.00, '2021-09-05', 'Dhaka'),
+    ('David', 'Taylor', 'IT', 32000.00, '2023-11-12', 'Savar'),
+    ('Emily', 'Davis', 'Science', 26000.00, '2024-01-08', 'Tangail'),
+    ('Robert', 'Miller', 'Marketing', 30000.00, '2022-12-01', 'Dhaka'),
+    ('Olivia', 'Anderson', 'HR', 27000.00, '2023-07-17', 'Gazipur'),
+    ('Daniel', 'Thomas', 'Finance', 38000.00, '2020-05-25', 'Savar'),
+    ('Sophia', 'Moore', 'IT', 45000.00, '2021-02-14', 'Dhaka');
+
+
+-- =========================================
+-- 4. DISPLAY ALL EMPLOYEES
+-- =========================================
+
+SELECT * FROM employee;
+
+
+-- =========================================
+-- 5. COUNT TOTAL EMPLOYEES
+-- =========================================
+
+SELECT COUNT(*) AS total_employee
+FROM employee;
+
+
+
+
+
+
+-
+64
+-
+
+
+
