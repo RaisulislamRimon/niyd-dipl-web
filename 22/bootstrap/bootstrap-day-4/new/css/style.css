@@ -12,3 +12,19 @@
   color: white;
   border-radius: 6px;
 }
+
+.my-caption {
+  color: white;
+  margin-top: 30%;
+}
+
+.slider-image {
+  float: right;
+  margin-top: 20%;
+}
+
+
+
+.about-content-margin{
+    margin-top: 100px;
+}
