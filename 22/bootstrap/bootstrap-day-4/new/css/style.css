@@ -23,8 +23,19 @@
   margin-top: 20%;
 }
 
+.about-content-margin {
+  margin-top: 100px;
+}
 
+.portfolio-img-hover {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+  opacity: 0.5;
+  display: none;
+  transition: 1s;
+}
 
-.about-content-margin{
-    margin-top: 100px;
+.portfolio-overlay:hover .portfolio-img-hover {
+  display: block;
 }
