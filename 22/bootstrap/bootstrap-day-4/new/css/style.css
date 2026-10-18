@@ -1,0 +1,14 @@
+.header-bg {
+  min-height: 700px;
+  width: 100%;
+  background-image: url("../img/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.header-bg .navbar-nav li a:hover {
+  background-color: rgb(13, 110, 253);
+  color: white;
+  border-radius: 6px;
+}
