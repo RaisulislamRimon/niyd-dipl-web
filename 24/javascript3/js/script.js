@@ -19,6 +19,9 @@ document.getElementById("plantQuiz").addEventListener("submit", function (e) {
   } else if (sunlight === "high" && care === "moderate" && pets === "no") {
     plantMatch = "Money Plant";
     console.log(plantMatch);
+  } else if (sunlight === "high" && care === "high" && pets === "no") {
+    plantMatch = "New Plant";
+    console.log(plantMatch);
   } else {
     plantMatch = "Not Match";
   }
