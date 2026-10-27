@@ -20,4 +20,16 @@ $("#demo4").click(function () {
   $(this).text("Demo44");
 });
 
+$(document).ready(function () {
+  $("#sum").click(function () {
+    var firstNumber = $("#firstNumber").val();
+    var secondNumber = $("#secondNumber").val();
 
+    // alert(firstNumber);
+    // alert(secondNumber);
+
+    var result = firstNumber + secondNumber;
+
+    $("#result").val(result);
+  });
+});
