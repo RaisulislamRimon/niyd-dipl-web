@@ -134,6 +134,74 @@ $("#email").keyup(function () {
   }
 });
 
+// password
+
+function password() {
+  var password = $("#password").val();
+
+  var regex =
+    /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+  if (regex.test(password)) {
+    $("#passwordError").text("");
+    return true;
+  } else {
+    $("#passwordError").text(
+      "Error: Invalid Password. You can use alphabetic character and . - _ ",
+    );
+    return false;
+  }
+}
+
+// password validate
+
+$("#password").keyup(function () {
+  var res = password();
+
+  if (res == true) {
+    $("#passwordError").text("");
+    $("#regBtn").prop("disable", false);
+  } else {
+    $("#passwordError").text(
+      "Error: Invalid Password. You can use alphabetic character and . - _ ",
+    );
+    $("#regBtn").prop("disable", true);
+  }
+});
+
+// confirmPassword
+
+function confirmPassword() {
+  var confirmPassword = $("#confirmPassword").val();
+   var password = $("#password").val();
+
+   if (password === confirmPassword) {
+    $('#confirmPasswordError').text('')
+   $("#regBtn").prop("disable", false);
+  } else {
+    $("#confirmPasswordError").text(
+      "Error: Invalid Confirm Password. You can use alphabetic character and . - _ ",
+    );
+    $("#regBtn").prop("disable", true);
+   }  
+}
+
+// confirmPassword validate
+
+$("#confirmPassword").keyup(function () {
+  var res = confirmPassword();
+
+  if (res == true) {
+    $("#confirmPasswordError").text("");
+    $("#regBtn").prop("disable", false);
+  } else {
+    $("#confirmPasswordError").text(
+      "Error: Invalid Confirm Password. You can use alphabetic character and . - _ ",
+    );
+    $("#regBtn").prop("disable", true);
+  }
+});
+
 // registration form submit
 
 $("#regForm").submit(function () {
@@ -141,7 +209,8 @@ $("#regForm").submit(function () {
     checkFirstName() == true &&
     checkLastName() == true &&
     checkUserName() == true &&
-    checkEmail() == true
+    checkEmail() == true &&
+    
   ) {
     $("#regBtn").prop("disabled", false);
     return true;
