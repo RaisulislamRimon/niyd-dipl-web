@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  float: left;
+  border: 1px solid gray;
+}
+
+.row {
+  position: relative;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.container {
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.h-50 {
+  height: 50px;
+}
+.h-200 {
+  height: 200px;
+}
+.h-250 {
+  height: 250px;
+}
+.h-400 {
+  height: 400px;
+}
+
+.menu {
+  list-style-type: none;
+  position: relative;
+}
+
+.menu li {
+  float: left;
+  /* width: 120px; */
+  background-color: bisque;
+  margin-right: 5px;
+}
+
+.menu li a {
+  background-color: black;
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  height: 50px;
+  padding: 13px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.menu li a:hover {
+  background-color: white;
+  color: black;
+  transition: 1s;
+  text-decoration: underline;
+  text-decoration-color: thistle;
+}
+
+.menu li ul {
+  list-style-type: none;
+  display: none;
+}
+
+.menu li ul li {
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+.menu li:hover ul {
+  display: block;
+  position: absolute;
+  width: 200px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 576px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 900px) {
+  .col-m1 {
+    width: 8.33%;
+  }
+  .col-m2 {
+    width: 16.66%;
+  }
+  .col-m3 {
+    width: 25%;
+  }
+  .col-m4 {
+    width: 33.33%;
+  }
+  .col-m5 {
+    width: 41.66%;
+  }
+  .col-m6 {
+    width: 50%;
+  }
+  .col-m7 {
+    width: 58.33%;
+  }
+  .col-m8 {
+    width: 66.66%;
+  }
+  .col-m9 {
+    width: 75%;
+  }
+  .col-m10 {
+    width: 83.33%;
+  }
+  .col-m11 {
+    width: 91.66%;
+  }
+  .col-m12 {
+    width: 100%;
+  }
+
+  .stct {
+    display: none;
+  }
+
+  .search-position {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .bg-color {
+    background-color: green;
+  }
+}
