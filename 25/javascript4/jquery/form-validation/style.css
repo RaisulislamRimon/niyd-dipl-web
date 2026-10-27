@@ -21,3 +21,7 @@ select {
   height: 35px;
   border: none;
 }
+
+span {
+  color: red;
+}
