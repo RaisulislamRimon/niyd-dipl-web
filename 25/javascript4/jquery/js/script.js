@@ -6,7 +6,7 @@ $("#demo").click(function () {
 $("#demo2").click(function () {
   var demo2 = $(this).text();
   //   alert(demo2);
-  console.log(demo2);
+  console.log("demo2");
 });
 
 $("#demo3").click(function () {
@@ -28,7 +28,7 @@ $(document).ready(function () {
     // alert(firstNumber);
     // alert(secondNumber);
 
-    var result = firstNumber + secondNumber;
+    var result = Number(firstNumber) + Number(secondNumber);
 
     $("#result").val(result);
   });
