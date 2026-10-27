@@ -99,13 +99,49 @@ $("#userName").keyup(function () {
   }
 });
 
+// checkEmail
+
+function checkEmail() {
+  var email = $("#email").val();
+
+  var regex =
+    /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+  if (regex.test(email)) {
+    $("#emailError").text("");
+    return true;
+  } else {
+    $("#emailError").text(
+      "Error: Invalid Email. You can use alphabetic character and . - _ ",
+    );
+    return false;
+  }
+}
+
+// checkEmail validate
+
+$("#email").keyup(function () {
+  var res = checkEmail();
+
+  if (res == true) {
+    $("#emailError").text("");
+    $("#regBtn").prop("disable", false);
+  } else {
+    $("#emailError").text(
+      "Error: Invalid Email. You can use alphabetic character and . - _ ",
+    );
+    $("#regBtn").prop("disable", true);
+  }
+});
+
 // registration form submit
 
 $("#regForm").submit(function () {
   if (
     checkFirstName() == true &&
     checkLastName() == true &&
-    checkUserName() == true
+    checkUserName() == true &&
+    checkEmail() == true
   ) {
     $("#regBtn").prop("disabled", false);
     return true;
