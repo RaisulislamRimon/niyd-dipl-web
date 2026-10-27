@@ -32,4 +32,31 @@ $(document).ready(function () {
 
     $("#result").val(result);
   });
+
+  $("#sub").click(function () {
+    var firstNumber = $("#firstNumber").val();
+    var secondNumber = $("#secondNumber").val();
+
+    var result = Number(firstNumber) - Number(secondNumber);
+
+    $("#result").val(result);
+  });
+
+  $("#multi").click(function () {
+    var firstNumber = $("#firstNumber").val();
+    var secondNumber = $("#secondNumber").val();
+
+    var result = Number(firstNumber) * Number(secondNumber);
+
+    $("#result").val(result);
+  });
+
+  $("#dev").click(function () {
+    var firstNumber = $("#firstNumber").val();
+    var secondNumber = $("#secondNumber").val();
+
+    var result = Number(firstNumber) / Number(secondNumber);
+
+    $("#result").val(result);
+  });
 });
