@@ -61,21 +61,21 @@ $("#subImage3").click(function () {
 //   $("#mainImage").attr("src", $(this).attr("src"));
 // });
 
-$(document).on("click", "#subImage1", function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $(document).on("click", "#subImage1", function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
 
-$(document).on("click", "#subImage2", function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $(document).on("click", "#subImage2", function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
 
-$(document).on("click", "#subImage3", function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $(document).on("click", "#subImage3", function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
 
-$(document).on("click", "#subImage4", function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $(document).on("click", "#subImage4", function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
 
 var html = "";
 
@@ -91,3 +91,7 @@ $.each(imageData, function (index, value) {
 console.log(html);
 
 $(".sub-image").append(html);
+
+$(document).on("click", ".sub-image-view", function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+});
