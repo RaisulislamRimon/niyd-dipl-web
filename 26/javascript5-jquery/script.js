@@ -43,20 +43,20 @@ function changeImage() {
 //   mainImage.setAttribute("src", this.getAttribute("src"));
 // };
 
-$("#subImage1").click(function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-  // var a = $("#mainImage").attr("src", $(this).attr("src"));
-  // console.log(a);
-});
+// $("#subImage1").click(function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+//   // var a = $("#mainImage").attr("src", $(this).attr("src"));
+//   // console.log(a);
+// });
 
-$("#subImage2").click(function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $("#subImage2").click(function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
 
-$("#subImage3").click(function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $("#subImage3").click(function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
 
-$("#subImage4").click(function () {
-  $("#mainImage").attr("src", $(this).attr("src"));
-});
+// $("#subImage4").click(function () {
+//   $("#mainImage").attr("src", $(this).attr("src"));
+// });
