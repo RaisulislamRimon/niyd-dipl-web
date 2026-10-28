@@ -21,7 +21,8 @@ function changeImage() {
 // setInterval(changeImage, 1000);
 var subImage2 = document.getElementById("subImage2");
 subImage2.onclick = function () {
-  var subImage2src = document.getElementById("subImage2").getAttribute("src");
+  // var subImage2src = document.getElementById("subImage2").getAttribute("src");
   // console.log(subImage2src);
-  mainImage.setAttribute("src", subImage2src);
+  // mainImage.setAttribute("src", subImage2src);
+  mainImage.setAttribute("src", this.getAttribute("src"));
 };
