@@ -43,23 +43,23 @@ function changeImage() {
 //   mainImage.setAttribute("src", this.getAttribute("src"));
 // };
 
-// $("#subImage1").click(function () {
-//   $("#mainImage").attr("src", $(this).attr("src"));
-//   // var a = $("#mainImage").attr("src", $(this).attr("src"));
-//   // console.log(a);
-// });
+$("#subImage1").click(function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+  // var a = $("#mainImage").attr("src", $(this).attr("src"));
+  // console.log(a);
+});
 
-// $("#subImage2").click(function () {
-//   $("#mainImage").attr("src", $(this).attr("src"));
-// });
+$("#subImage2").click(function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+});
 
-// $("#subImage3").click(function () {
-//   $("#mainImage").attr("src", $(this).attr("src"));
-// });
+$("#subImage3").click(function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+});
 
-// $("#subImage4").click(function () {
-//   $("#mainImage").attr("src", $(this).attr("src"));
-// });
+$("#subImage4").click(function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+});
 
 var html = "";
 
@@ -67,7 +67,9 @@ $.each(imageData, function (index, value) {
   html +=
     '<img src=" ' +
     value +
-    ' " alt="image-2" class="img-fluid d-none" style="height: 600px" />';
+    ' " alt="image-2" id="subImage' +
+    ++index +
+    '" class="sub-image-view" style="height: 100px; width: 100px; margin-right: 10px" />';
 });
 
 console.log(html);
