@@ -65,8 +65,11 @@ var html = "";
 
 $.each(imageData, function (index, value) {
   html +=
-    '<img src="img/2.jpg" alt="image-2" class="img-fluid d-none" style="height: 600px" />';
+    '<img src=" ' +
+    value +
+    ' " alt="image-2" class="img-fluid d-none" style="height: 600px" />';
 });
 
 console.log(html);
 
+$(".sub-image").append(html);
