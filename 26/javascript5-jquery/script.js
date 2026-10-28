@@ -52,3 +52,11 @@ $("#subImage1").click(function () {
 $("#subImage2").click(function () {
   $("#mainImage").attr("src", $(this).attr("src"));
 });
+
+$("#subImage3").click(function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+});
+
+$("#subImage4").click(function () {
+  $("#mainImage").attr("src", $(this).attr("src"));
+});
