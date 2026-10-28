@@ -6,14 +6,14 @@ var mainImage = document.getElementById("mainImage");
 // mainImage.setAttribute("src", imageData[3]);
 // mainImage.setAttribute("src", "img/4.jpg");
 
-console.log(imageData.length);
+var imageDataLength = imageData.length;
 
 var index = 0;
 
 function changeImage() {
   mainImage.setAttribute("src", imageData[index]);
   index++;
-  if (index == 4) {
+  if (index == imageDataLength) {
     index = 0;
   }
 }
