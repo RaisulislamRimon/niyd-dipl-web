@@ -1,3 +1,4 @@
+document.write(" <br> ");
 document.write("Hello World!!!");
 document.write(" <br> <br> ");
 
@@ -38,7 +39,7 @@ document.write(" <br> ");
 
 function addDiv() {
   var divElement = document.createElement("div");
-  divElement.style.width = "100px";
+  divElement.style.width = "200px";
   divElement.style.height = "200px";
   divElement.style.backgroundColor = "tomato";
 
@@ -47,4 +48,5 @@ function addDiv() {
 
 addDiv();
 
+document.write(" <br> ");
 document.write(" <br> ");
