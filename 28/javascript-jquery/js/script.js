@@ -51,6 +51,10 @@ function addDiv() {
 addDiv();
 addDiv();
 addDiv();
+addDiv();
+addDiv();
+addDiv();
+addDiv();
 
 document.write(" <br> ");
 document.write(" <br> ");
