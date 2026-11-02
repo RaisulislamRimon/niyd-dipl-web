@@ -41,11 +41,15 @@ function addDiv() {
   var divElement = document.createElement("div");
   divElement.style.width = "200px";
   divElement.style.height = "200px";
+  divElement.style.float = "left";
+  divElement.style.marginRight = "10px";
   divElement.style.backgroundColor = "tomato";
 
   document.getElementById("container").append(divElement);
 }
 
+addDiv();
+addDiv();
 addDiv();
 
 document.write(" <br> ");
