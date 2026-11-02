@@ -58,3 +58,20 @@ addDiv();
 
 document.write(" <br> ");
 document.write(" <br> ");
+
+function createDiv() {
+  var divElement = document.createElement("div");
+  divElement.style.width = document.getElementById("widthInput").value + "px";
+  divElement.style.height = document.getElementById("heightInput").value + "px";
+  divElement.style.float = "left";
+  divElement.style.marginRight = "10px";
+  divElement.style.backgroundColor =
+    document.getElementById("bgColorInput").value;
+
+  document.getElementById("createDiv").append(divElement);
+}
+
+// createDiv();
+
+document.write(" <br> ");
+document.write(" <br> ");
