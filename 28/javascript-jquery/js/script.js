@@ -36,4 +36,15 @@ addition();
 
 document.write(" <br> ");
 
+function addDiv() {
+  var divElement = document.createElement("div");
+  divElement.style.width = "100px";
+  divElement.style.height = "200px";
+  divElement.style.backgroundColor = "tomato";
 
+  document.getElementById("container").append(divElement);
+}
+
+addDiv();
+
+document.write(" <br> ");
