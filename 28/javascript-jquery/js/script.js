@@ -21,3 +21,19 @@ function addition(x, y) {
 addition(10, 20);
 
 document.write(" <br> ");
+
+document.write(" <br> ");
+
+function addition(x = 100, y = 200) {
+  var z = x + y;
+  document.write(z);
+}
+
+addition(10, 20);
+document.write(" <br> ");
+
+addition();
+
+document.write(" <br> ");
+
+
