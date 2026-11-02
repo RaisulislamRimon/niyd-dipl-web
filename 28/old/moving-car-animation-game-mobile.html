@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0,user-scalable=no"
+    />
+
+    <title>Highway Rush</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        background: #111;
+        touch-action: none;
+      }
+
+      /* =========================
+   GAME
+========================= */
+
+      #game {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: #4caf50;
+      }
+
+      /* =========================
+   SKY
+========================= */
+
+      .sky {
+        position: absolute;
+        width: 100%;
+        height: 38%;
+        background: linear-gradient(#42a5f5, #90caf9);
+      }
+
+      .sun {
+        position: absolute;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: #ffd54f;
+        top: 40px;
+        right: 50px;
+        box-shadow: 0 0 30px #ffd54f;
+      }
+
+      /* =========================
+   ROAD
+========================= */
+
+      .road {
+        position: absolute;
+        top: 32%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(650px, 82%);
+        background: #303030;
+        border-left: 8px solid #ddd;
+        border-right: 8px solid #ddd;
+        overflow: hidden;
+      }
+
+      .roadLine {
+        position: absolute;
+        width: 8px;
+        height: 90px;
+        background: white;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* =========================
+   HUD
+========================= */
+
+      #hud {
+        position: absolute;
+        z-index: 50;
+        top: 15px;
+        left: 15px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px black;
+      }
+
+      .stat {
+        margin-bottom: 7px;
+        font-size: 18px;
+      }
+
+      #speedBar {
+        width: 160px;
+        height: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      #speedFill {
+        width: 40%;
+        height: 100%;
+        background: #00e676;
+      }
+
+      /* =========================
+   PAUSE
+========================= */
+
+      #pauseBtn {
+        position: absolute;
+        z-index: 60;
+        right: 15px;
+        top: 15px;
+
+        width: 50px;
+        height: 50px;
+
+        border: 0;
+        border-radius: 50%;
+
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+
+        font-size: 20px;
+      }
+
+      /* =========================
+   PLAYER
+========================= */
+
+      #player {
+        position: absolute;
+        z-index: 20;
+
+        width: 70px;
+        height: 125px;
+
+        bottom: 65px;
+        left: 50%;
+
+        transform: translateX(-50%);
+      }
+
+      /* car body */
+
+      .carBody {
+        position: absolute;
+
+        width: 70px;
+        height: 115px;
+
+        bottom: 0;
+
+        background: linear-gradient(90deg, #b71c1c, #f44336, #b71c1c);
+
+        border-radius: 18px 18px 12px 12px;
+
+        box-shadow:
+          inset 0 0 10px rgba(255, 255, 255, 0.3),
+          0 8px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      /* roof */
+
+      .roof {
+        position: absolute;
+
+        width: 50px;
+        height: 55px;
+
+        top: 15px;
+        left: 10px;
+
+        background: #c62828;
+
+        border-radius: 15px 15px 6px 6px;
+      }
+
+      /* windows */
+
+      .window {
+        position: absolute;
+
+        width: 38px;
+        height: 22px;
+
+        left: 16px;
+
+        background: #90caf9;
+
+        border-radius: 7px;
+      }
+
+      .frontWindow {
+        top: 20px;
+      }
+
+      .backWindow {
+        top: 45px;
+      }
+
+      /* lights */
+
+      .headlight {
+        position: absolute;
+
+        width: 10px;
+        height: 13px;
+
+        top: 4px;
+
+        background: #fff59d;
+
+        border-radius: 4px;
+      }
+
+      .headlight.left {
+        left: 9px;
+      }
+
+      .headlight.right {
+        right: 9px;
+      }
+
+      /* wheels */
+
+      .wheel {
+        position: absolute;
+
+        width: 14px;
+        height: 32px;
+
+        background: #111;
+
+        border-radius: 7px;
+      }
+
+      .wheel.left {
+        left: -7px;
+      }
+
+      .wheel.right {
+        right: -7px;
+      }
+
+      .w1 {
+        top: 25px;
+      }
+
+      .w2 {
+        top: 83px;
+      }
+
+      /* =========================
+   ENEMIES
+========================= */
+
+      .enemy {
+        position: absolute;
+
+        width: 65px;
+        height: 110px;
+
+        border-radius: 15px;
+
+        z-index: 15;
+
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .enemy::before {
+        content: "";
+
+        position: absolute;
+
+        width: 40px;
+        height: 42px;
+
+        left: 12px;
+        top: 12px;
+
+        background: #90caf9;
+
+        border-radius: 8px;
+      }
+
+      .enemy::after {
+        content: "";
+
+        position: absolute;
+
+        width: 12px;
+        height: 20px;
+
+        left: 7px;
+        bottom: 15px;
+
+        background: #111;
+
+        border-radius: 5px;
+
+        box-shadow: 39px 0 #111;
+      }
+
+      /* =========================
+   COINS
+========================= */
+
+      .coin {
+        position: absolute;
+
+        width: 28px;
+        height: 28px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          #fff176 20%,
+          #ffc107 60%,
+          #ff8f00 100%
+        );
+
+        border: 3px solid #ffeb3b;
+
+        box-shadow: 0 0 12px #ffc107;
+
+        z-index: 18;
+      }
+
+      /* =========================
+   NITRO
+========================= */
+
+      #nitroContainer {
+        position: absolute;
+
+        z-index: 50;
+
+        right: 15px;
+        top: 80px;
+
+        width: 130px;
+      }
+
+      #nitroBar {
+        width: 100%;
+        height: 12px;
+
+        background: rgba(0, 0, 0, 0.5);
+
+        border-radius: 20px;
+
+        overflow: hidden;
+      }
+
+      #nitroFill {
+        width: 100%;
+        height: 100%;
+
+        background: #29b6f6;
+      }
+
+      #nitroText {
+        color: white;
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+
+      /* =========================
+   CONTROLS
+========================= */
+
+      #controls {
+        position: absolute;
+
+        z-index: 100;
+
+        left: 0;
+        right: 0;
+        bottom: 15px;
+
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0 20px;
+
+        pointer-events: none;
+      }
+
+      .controlGroup {
+        display: flex;
+        gap: 12px;
+
+        pointer-events: auto;
+      }
+
+      .control {
+        width: 65px;
+        height: 65px;
+
+        border: 0;
+        border-radius: 50%;
+
+        background: rgba(0, 0, 0, 0.6);
+
+        color: white;
+
+        font-size: 25px;
+
+        border: 2px solid rgba(255, 255, 255, 0.5);
+
+        touch-action: none;
+      }
+
+      .control:active {
+        background: #ff5722;
+        transform: scale(0.94);
+      }
+
+      /* =========================
+   MENU
+========================= */
+
+      .overlay {
+        position: absolute;
+
+        z-index: 200;
+
+        inset: 0;
+
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85));
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        color: white;
+      }
+
+      .menu {
+        width: min(90%, 420px);
+
+        padding: 35px 25px;
+
+        border-radius: 25px;
+
+        background: rgba(30, 30, 30, 0.9);
+
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      .menu h1 {
+        font-size: 42px;
+
+        margin-bottom: 10px;
+
+        color: #ff7043;
+      }
+
+      .menu p {
+        color: #ccc;
+        margin-bottom: 25px;
+      }
+
+      .mainButton {
+        width: 100%;
+
+        padding: 16px;
+
+        border: 0;
+
+        border-radius: 12px;
+
+        background: #ff5722;
+
+        color: white;
+
+        font-size: 18px;
+
+        font-weight: bold;
+
+        margin-top: 10px;
+      }
+
+      .mainButton:active {
+        transform: scale(0.98);
+      }
+
+      .instructions {
+        margin-top: 20px;
+
+        text-align: left;
+
+        line-height: 1.8;
+
+        color: #ddd;
+      }
+
+      /* =========================
+   MOBILE
+========================= */
+
+      @media (min-width: 800px) {
+        #controls {
+          max-width: 650px;
+          margin: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="game">
+      <div class="sky"></div>
+
+      <div class="sun"></div>
+
+      <div class="road">
+        <div class="roadLine" style="top: -100px"></div>
+        <div class="roadLine" style="top: 100px"></div>
+        <div class="roadLine" style="top: 300px"></div>
+        <div class="roadLine" style="top: 500px"></div>
+        <div class="roadLine" style="top: 700px"></div>
+      </div>
+
+      <!-- HUD -->
+
+      <div id="hud">
+        <div class="stat">🏆 <span id="score">0</span></div>
+
+        <div class="stat">🪙 <span id="coins">0</span></div>
+
+        <div class="stat">❤️ <span id="lives">3</span></div>
+
+        <div class="stat">⚡ <span id="speed">50</span> km/h</div>
+
+        <div id="speedBar">
+          <div id="speedFill"></div>
+        </div>
+      </div>
+
+      <!-- PAUSE -->
+
+      <button id="pauseBtn">⏸</button>
+
+      <!-- NITRO -->
+
+      <div id="nitroContainer">
+        <div id="nitroText">NITRO</div>
+
+        <div id="nitroBar">
+          <div id="nitroFill"></div>
+        </div>
+      </div>
+
+      <!-- PLAYER -->
+
+      <div id="player">
+        <div class="carBody">
+          <div class="roof"></div>
+
+          <div class="window frontWindow"></div>
+
+          <div class="window backWindow"></div>
+
+          <div class="headlight left"></div>
+          <div class="headlight right"></div>
+        </div>
+
+        <div class="wheel left w1"></div>
+        <div class="wheel right w1"></div>
+
+        <div class="wheel left w2"></div>
+        <div class="wheel right w2"></div>
+      </div>
+
+      <!-- CONTROLS -->
+
+      <div id="controls">
+        <div class="controlGroup">
+          <button class="control" id="left">◀</button>
+
+          <button class="control" id="right">▶</button>
+        </div>
+
+        <div class="controlGroup">
+          <button class="control" id="brake">🛑</button>
+
+          <button class="control" id="nitro">⚡</button>
+        </div>
+      </div>
+
+      <!-- START SCREEN -->
+
+      <div class="overlay" id="startScreen">
+        <div class="menu">
+          <h1>🏎️ Highway Rush</h1>
+
+          <p>Dodge traffic, collect coins and use nitro!</p>
+
+          <button class="mainButton" id="startBtn">▶ START GAME</button>
+
+          <div class="instructions">
+            🎮 <b>Keyboard</b><br />
+            ← → or A D = Steering<br />
+            ↑ / W = Accelerate<br />
+            Space = Brake<br />
+            Shift = Nitro
+
+            <br /><br />
+
+            📱 <b>Mobile</b><br />
+            Use the on-screen buttons.
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME OVER -->
+
+      <div class="overlay" id="gameOver" style="display: none">
+        <div class="menu">
+          <h1>💥 CRASH!</h1>
+
+          <p>
+            Your Score:
+            <strong id="finalScore">0</strong>
+          </p>
+
+          <p>
+            Coins:
+            <strong id="finalCoins">0</strong>
+          </p>
+
+          <p>
+            Best:
+            <strong id="bestScore">0</strong>
+          </p>
+
+          <button class="mainButton" id="restartBtn">🔄 PLAY AGAIN</button>
+        </div>
+      </div>
+
+      <!-- PAUSE SCREEN -->
+
+      <div class="overlay" id="pauseScreen" style="display: none">
+        <div class="menu">
+          <h1>⏸ PAUSED</h1>
+
+          <button class="mainButton" id="resumeBtn">▶ RESUME</button>
+
+          <button class="mainButton" id="quitBtn">🏠 MAIN MENU</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* =========================
+   ELEMENTS
+========================= */
+
+      const game = document.getElementById("game");
+
+      const player = document.getElementById("player");
+
+      const road = document.querySelector(".road");
+
+      const scoreEl = document.getElementById("score");
+
+      const coinsEl = document.getElementById("coins");
+
+      const livesEl = document.getElementById("lives");
+
+      const speedEl = document.getElementById("speed");
+
+      const speedFill = document.getElementById("speedFill");
+
+      const nitroFill = document.getElementById("nitroFill");
+
+      const startScreen = document.getElementById("startScreen");
+
+      const gameOver = document.getElementById("gameOver");
+
+      const pauseScreen = document.getElementById("pauseScreen");
+
+      /* =========================
+   GAME STATE
+========================= */
+
+      let running = false;
+
+      let paused = false;
+
+      let playerX = 50;
+
+      let speed = 5;
+
+      let score = 0;
+
+      let coins = 0;
+
+      let lives = 3;
+
+      let nitro = 100;
+
+      let enemies = [];
+
+      let coinObjects = [];
+
+      let lastEnemy = 0;
+
+      let lastCoin = 0;
+
+      let animation;
+
+      /* =========================
+   INPUT
+========================= */
+
+      let leftPressed = false;
+      let rightPressed = false;
+      let brakePressed = false;
+      let nitroPressed = false;
+
+      /* =========================
+   KEYBOARD
+========================= */
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft" || e.key.toLowerCase() === "a") {
+          leftPressed = true;
+        }
+
+        if (e.key === "ArrowRight" || e.key.toLowerCase() === "d") {
+          rightPressed = true;
+        }
+
+        if (e.key === "ArrowDown" || e.code === "Space") {
+          brakePressed = true;
+        }
+
+        if (e.key === "Shift") {
+          nitroPressed = true;
+        }
+      });
+
+      document.addEventListener("keyup", (e) => {
+        if (e.key === "ArrowLeft" || e.key.toLowerCase() === "a") {
+          leftPressed = false;
+        }
+
+        if (e.key === "ArrowRight" || e.key.toLowerCase() === "d") {
+          rightPressed = false;
+        }
+
+        if (e.key === "ArrowDown" || e.code === "Space") {
+          brakePressed = false;
+        }
+
+        if (e.key === "Shift") {
+          nitroPressed = false;
+        }
+      });
+
+      /* =========================
+   TOUCH CONTROLS
+========================= */
+
+      function control(id, start, end) {
+        const button = document.getElementById(id);
+
+        button.addEventListener("pointerdown", (e) => {
+          e.preventDefault();
+
+          start();
+        });
+
+        button.addEventListener("pointerup", (e) => {
+          e.preventDefault();
+
+          end();
+        });
+
+        button.addEventListener("pointercancel", end);
+
+        button.addEventListener("pointerleave", end);
+      }
+
+      control(
+        "left",
+        () => (leftPressed = true),
+        () => (leftPressed = false),
+      );
+
+      control(
+        "right",
+        () => (rightPressed = true),
+        () => (rightPressed = false),
+      );
+
+      control(
+        "brake",
+        () => (brakePressed = true),
+        () => (brakePressed = false),
+      );
+
+      control(
+        "nitro",
+        () => (nitroPressed = true),
+        () => (nitroPressed = false),
+      );
+
+      /* =========================
+   START GAME
+========================= */
+
+      document.getElementById("startBtn").onclick = startGame;
+
+      function startGame() {
+        startScreen.style.display = "none";
+
+        gameOver.style.display = "none";
+
+        pauseScreen.style.display = "none";
+
+        running = true;
+
+        paused = false;
+
+        playerX = 50;
+
+        speed = 5;
+
+        score = 0;
+
+        coins = 0;
+
+        lives = 3;
+
+        nitro = 100;
+
+        enemies.forEach((e) => e.element.remove());
+
+        coinObjects.forEach((e) => e.element.remove());
+
+        enemies = [];
+
+        coinObjects = [];
+
+        updateHUD();
+
+        cancelAnimationFrame(animation);
+
+        animation = requestAnimationFrame(loop);
+      }
+
+      /* =========================
+   PLAYER
+========================= */
+
+      function updatePlayer() {
+        if (leftPressed) {
+          playerX -= 0.75;
+        }
+
+        if (rightPressed) {
+          playerX += 0.75;
+        }
+
+        playerX = Math.max(24, Math.min(76, playerX));
+
+        player.style.left = playerX + "%";
+      }
+
+      /* =========================
+   SPEED
+========================= */
+
+      function updateSpeed() {
+        if (brakePressed) {
+          speed -= 0.12;
+        } else {
+          speed += 0.015;
+        }
+
+        /*
+    Nitro
+  */
+
+        if (nitroPressed && nitro > 0) {
+          speed += 0.08;
+
+          nitro -= 0.35;
+        } else {
+          nitro += 0.03;
+        }
+
+        speed = Math.max(2, Math.min(12, speed));
+
+        nitro = Math.max(0, Math.min(100, nitro));
+      }
+
+      /* =========================
+   ROAD
+========================= */
+
+      let roadOffset = 0;
+
+      function moveRoad() {
+        roadOffset += speed;
+
+        document.querySelectorAll(".roadLine").forEach((line, i) => {
+          let y = (i * 200 + roadOffset) % 800;
+
+          line.style.top = y - 100 + "px";
+        });
+      }
+
+      /* =========================
+   CREATE ENEMY
+========================= */
+
+      function createEnemy() {
+        const enemy = document.createElement("div");
+
+        enemy.className = "enemy";
+
+        const colors = ["#1565c0", "#8e24aa", "#00897b", "#f9a825", "#424242"];
+
+        enemy.style.background =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        const lanes = [25, 50, 75];
+
+        const lane = lanes[Math.floor(Math.random() * lanes.length)];
+
+        enemy.style.left = lane + "%";
+
+        enemy.style.top = "-130px";
+
+        road.appendChild(enemy);
+
+        enemies.push({
+          element: enemy,
+          y: -130,
+          lane: lane,
+        });
+      }
+
+      /* =========================
+   CREATE COIN
+========================= */
+
+      function createCoin() {
+        const coin = document.createElement("div");
+
+        coin.className = "coin";
+
+        const lanes = [25, 50, 75];
+
+        const lane = lanes[Math.floor(Math.random() * lanes.length)];
+
+        coin.style.left = lane + "%";
+
+        coin.style.top = "-40px";
+
+        road.appendChild(coin);
+
+        coinObjects.push({
+          element: coin,
+          y: -40,
+          lane: lane,
+        });
+      }
+
+      /* =========================
+   MOVE OBJECTS
+========================= */
+
+      function moveObjects() {
+        /*
+    ENEMIES
+  */
+
+        for (let i = enemies.length - 1; i >= 0; i--) {
+          const enemy = enemies[i];
+
+          enemy.y += speed;
+
+          enemy.element.style.top = enemy.y + "px";
+
+          if (collision(player, enemy.element)) {
+            enemy.element.remove();
+
+            enemies.splice(i, 1);
+
+            lives--;
+
+            updateHUD();
+
+            if (lives <= 0) {
+              endGame();
+
+              return;
+            }
+          }
+
+          if (enemy.y > road.clientHeight + 150) {
+            enemy.element.remove();
+
+            enemies.splice(i, 1);
+
+            score += 10;
+          }
+        }
+
+        /*
+    COINS
+  */
+
+        for (let i = coinObjects.length - 1; i >= 0; i--) {
+          const coin = coinObjects[i];
+
+          coin.y += speed;
+
+          coin.element.style.top = coin.y + "px";
+
+          if (collision(player, coin.element)) {
+            coin.element.remove();
+
+            coinObjects.splice(i, 1);
+
+            coins++;
+
+            score += 25;
+
+            nitro = Math.min(100, nitro + 10);
+
+            updateHUD();
+
+            continue;
+          }
+
+          if (coin.y > road.clientHeight + 50) {
+            coin.element.remove();
+
+            coinObjects.splice(i, 1);
+          }
+        }
+      }
+
+      /* =========================
+   COLLISION
+========================= */
+
+      function collision(a, b) {
+        const A = a.getBoundingClientRect();
+
+        const B = b.getBoundingClientRect();
+
+        return !(
+          A.bottom < B.top ||
+          A.top > B.bottom ||
+          A.right < B.left ||
+          A.left > B.right
+        );
+      }
+
+      /* =========================
+   HUD
+========================= */
+
+      function updateHUD() {
+        scoreEl.textContent = score;
+
+        coinsEl.textContent = coins;
+
+        livesEl.textContent = lives;
+
+        speedEl.textContent = Math.round(speed * 20);
+
+        speedFill.style.width = (speed / 12) * 100 + "%";
+
+        nitroFill.style.width = nitro + "%";
+      }
+
+      /* =========================
+   GAME LOOP
+========================= */
+
+      function loop(timestamp) {
+        if (!running || paused) {
+          return;
+        }
+
+        updatePlayer();
+
+        updateSpeed();
+
+        moveRoad();
+
+        moveObjects();
+
+        updateHUD();
+
+        /*
+    Enemy spawn rate
+    gets faster as
+    score increases.
+  */
+
+        const enemyDelay = Math.max(500, 1200 - score * 2);
+
+        if (timestamp - lastEnemy > enemyDelay) {
+          createEnemy();
+
+          lastEnemy = timestamp;
+        }
+
+        /*
+    Coins
+  */
+
+        if (timestamp - lastCoin > 1400) {
+          createCoin();
+
+          lastCoin = timestamp;
+        }
+
+        animation = requestAnimationFrame(loop);
+      }
+
+      /* =========================
+   PAUSE
+========================= */
+
+      document.getElementById("pauseBtn").onclick = pauseGame;
+
+      function pauseGame() {
+        if (!running) return;
+
+        paused = true;
+
+        pauseScreen.style.display = "flex";
+      }
+
+      document.getElementById("resumeBtn").onclick = () => {
+        paused = false;
+
+        pauseScreen.style.display = "none";
+
+        animation = requestAnimationFrame(loop);
+      };
+
+      /* =========================
+   MAIN MENU
+========================= */
+
+      document.getElementById("quitBtn").onclick = () => {
+        paused = false;
+
+        running = false;
+
+        pauseScreen.style.display = "none";
+
+        startScreen.style.display = "flex";
+      };
+
+      /* =========================
+   GAME OVER
+========================= */
+
+      function endGame() {
+        running = false;
+
+        cancelAnimationFrame(animation);
+
+        document.getElementById("finalScore").textContent = score;
+
+        document.getElementById("finalCoins").textContent = coins;
+
+        const best = Math.max(
+          score,
+          Number(localStorage.getItem("highwayRushBest") || 0),
+        );
+
+        localStorage.setItem("highwayRushBest", best);
+
+        document.getElementById("bestScore").textContent = best;
+
+        gameOver.style.display = "flex";
+      }
+
+      /* =========================
+   RESTART
+========================= */
+
+      document.getElementById("restartBtn").onclick = startGame;
+
+      /* =========================
+   INITIAL HUD
+========================= */
+
+      updateHUD();
+    </script>
+  </body>
+</html>
