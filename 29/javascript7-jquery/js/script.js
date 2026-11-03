@@ -229,3 +229,68 @@ $("#email").keyup(function () {
     $("#emailError").text("email must be between 2 and 30 characters");
   }
 });
+
+// Mobile field validation
+$("#mobile").keyup(function () {
+  var mobileValue = $("#mobile").val().trim();
+
+  // Bangladesh mobile number validation
+  const mobileRegex = /^01[3-9]\d{8}$/;
+
+  if (mobileRegex.test(mobileValue)) {
+    $("#mobileError").text("");
+  } else {
+    $("#mobileError").text("Please enter a valid 11-digit mobile number.");
+  }
+});
+
+// Password field validation
+$("#password").keyup(function () {
+  var passwordValue = $("#password").val();
+
+  // Password validation using Regex
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+
+  if (passwordRegex.test(passwordValue)) {
+    $("#passwordError").text("");
+  } else {
+    $("#passwordError").text(
+      "Password must be 8-20 characters with uppercase, lowercase, number and special character.",
+    );
+  }
+});
+
+// Confirm Password field validation
+$("#confirmPassword").keyup(function () {
+  var passwordValue = $("#password").val();
+  var confirmPasswordValue = $("#confirmPassword").val();
+
+  if (confirmPasswordValue === "") {
+    $("#confirmPasswordError").text("Please confirm your password.");
+  } else if (passwordValue === confirmPasswordValue) {
+    $("#confirmPasswordError").text("");
+  } else {
+    $("#confirmPasswordError").text("Password does not match.");
+  }
+});
+
+// Password and Confirm Password validation
+function validateConfirmPassword() {
+  var passwordValue = $("#password").val();
+  var confirmPasswordValue = $("#confirmPassword").val();
+
+  if (confirmPasswordValue === "") {
+    $("#confirmPasswordError").text("");
+  } else if (passwordValue === confirmPasswordValue) {
+    $("#confirmPasswordError").text("");
+  } else {
+    $("#confirmPasswordError").text("Password does not match.");
+  }
+}
+
+// Check when confirm password changes
+$("#confirmPassword").keyup(validateConfirmPassword);
+
+// Check again when original password changes
+$("#password").keyup(validateConfirmPassword);

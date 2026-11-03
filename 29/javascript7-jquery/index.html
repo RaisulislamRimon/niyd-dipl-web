@@ -57,36 +57,43 @@
                       <span id="emailError" class="text-danger"></span>
                     </div>
                   </div>
-                  <!-- mobile  -->
+
+                  <!-- mobile -->
                   <div class="row mb-3">
-                    <label class="col-md-3"> Mobile </label>
+                    <label class="col-md-3">Mobile</label>
                     <div class="col-md-9">
-                      <!-- mobile input field  -->
                       <input
-                        type="number"
+                        type="tel"
                         class="form-control"
                         name="mobile"
                         id="mobile"
+                        placeholder="Enter your mobile number"
+                        maxlength="14"
                       />
-                      <!-- mobileError  -->
+
                       <span class="text-danger" id="mobileError"></span>
                     </div>
                   </div>
-                  <!-- password  -->
+
+                  <!-- password -->
                   <div class="row mb-3">
-                    <label class="col-md-3"> Password </label>
+                    <label class="col-md-3">Password</label>
+
                     <div class="col-md-9">
-                      <!-- password input field  -->
                       <input
                         type="password"
                         class="form-control"
                         name="password"
                         id="password"
+                        placeholder="Enter your password"
+                        minlength="8"
+                        maxlength="20"
                       />
-                      <!-- passwordError  -->
+
                       <span class="text-danger" id="passwordError"></span>
                     </div>
                   </div>
+
                   <!-- confirmPassword  -->
                   <div class="row mb-3">
                     <label class="col-md-3"> Confirm Password </label>
