@@ -21,3 +21,8 @@ document.write("<br>");
 document.write(data[10]);
 document.write("<br>");
 document.write(data[14]);
+document.write("<br>");
+
+for (key in data) {
+  document.write(data[key] + " ");
+}
