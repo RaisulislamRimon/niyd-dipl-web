@@ -91,3 +91,35 @@ document.write(
 );
 
 document.write("<br>");
+
+// car
+
+var car = {
+  name: "Toyota Axio",
+  model: "2015",
+  color: "White",
+  price: 10000000000,
+  start: function () {
+    document.write("Car is starting");
+  },
+  break: function () {
+    document.write("Car is breaking");
+  },
+};
+
+document.write("<br>");
+document.write(car.name);
+document.write("<br>");
+document.write(car.model);
+document.write("<br>");
+document.write(car.color);
+document.write("<br>");
+document.write(car.price);
+document.write("<br>");
+// document.write(car.start())
+car.start();
+document.write("<br>");
+car.break();
+document.write("<br>");
+
+document.write("<br>");
