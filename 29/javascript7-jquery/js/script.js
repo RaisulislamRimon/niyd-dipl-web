@@ -195,6 +195,8 @@ $("#headingTwo").mouseleave(function () {
 
 // form
 
+// name field validation
+
 $("#name").keyup(function () {
   var nameValue = $("#name").val();
   // console.log(name);
@@ -208,5 +210,22 @@ $("#name").keyup(function () {
     $("#nameError").text(" ");
   } else {
     $("#nameError").text("Name must be between 2 and 30 characters");
+  }
+});
+
+// email field validation
+
+$("#email").keyup(function () {
+  var emailValue = $("#email").val();
+  // console.log(email);
+
+  // email field validation using regex
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  // if (emailValue.length > 2 && emailValue.length < 20) {
+  if (emailRegex.test(emailValue)) {
+    $("#emailError").text(" ");
+  } else {
+    $("#emailError").text("email must be between 2 and 30 characters");
   }
 });
