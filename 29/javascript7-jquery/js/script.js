@@ -1,3 +1,8 @@
+function changeHeadingBgReg() {
+  var headingTag = document.getElementById("heading");
+  headingTag.style.backgroundColor = "red";
+}
+
 var data = [
   10,
   20,
