@@ -180,6 +180,11 @@ document.write("<br>");
 
 document.write("<br>");
 
+// jQuery
+
+// jQuery Syntax
+// $(selector).Action()
+
 $("#headingTwo").mouseover(function () {
   $("#headingTwo").text("Hello jQuery");
 });
