@@ -188,3 +188,7 @@ document.write("<br>");
 $("#headingTwo").mouseover(function () {
   $("#headingTwo").text("Hello jQuery");
 });
+
+$("#headingTwo").mouseleave(function () {
+  $("#headingTwo").text("Heading Two Content");
+});
