@@ -192,3 +192,15 @@ $("#headingTwo").mouseover(function () {
 $("#headingTwo").mouseleave(function () {
   $("#headingTwo").text("Heading Two Content");
 });
+
+// form
+
+$("#name").keyup(function () {
+  var name = $("#name").val();
+  // console.log(name);
+  if (name.length > 2 && name.length < 20) {
+    $("#nameError").text("");
+  } else {
+    $("#nameError").text("Name must be between 2 and 20 characters");
+  }
+});
