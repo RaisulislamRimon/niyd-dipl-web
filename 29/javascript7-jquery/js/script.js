@@ -3,6 +3,30 @@ function changeHeadingBgReg() {
   headingTag.style.backgroundColor = "red";
 }
 
+function changeHeadingBgGreen() {
+  var headingTag = document.getElementById("heading");
+  headingTag.style.backgroundColor = "green";
+}
+
+function changeHeadingBgEmpty() {
+  var headingTag = document.getElementById("heading");
+  headingTag.style.backgroundColor = "white";
+}
+
+var greetButtonElement = document.getElementById("greetButton");
+
+greetButtonElement.onmouseover = function () {
+  changeHeadingBgReg();
+};
+
+greetButtonElement.onclick = function () {
+  changeHeadingBgGreen();
+};
+
+greetButtonElement.onmouseleave = function () {
+  changeHeadingBgEmpty();
+};
+
 var data = [
   10,
   20,
