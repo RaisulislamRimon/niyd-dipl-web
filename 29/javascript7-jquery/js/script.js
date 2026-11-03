@@ -27,6 +27,28 @@ greetButtonElement.onmouseleave = function () {
   changeHeadingBgEmpty();
 };
 
+var nameInputElement = document.getElementById("nameInput");
+
+nameInputElement.onmouseover = function () {
+  var headingTag = document.getElementById("heading");
+  headingTag.innerText = "Sonia";
+};
+
+nameInputElement.onclick = function () {
+  var headingTag = document.getElementById("heading");
+  headingTag.innerText = "Sadia";
+};
+
+nameInputElement.onkeyup = function () {
+  var headingTag = document.getElementById("heading");
+  headingTag.innerText = "Nadia";
+};
+
+nameInputElement.onblur = function () {
+  var headingTag = document.getElementById("heading");
+  headingTag.innerText = "Tuktuki";
+};
+
 var data = [
   10,
   20,
