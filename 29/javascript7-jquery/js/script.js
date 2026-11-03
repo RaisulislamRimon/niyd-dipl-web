@@ -196,9 +196,9 @@ $("#headingTwo").mouseleave(function () {
 // form
 
 $("#name").keyup(function () {
-  var name = $("#name").val();
+  var nameValue = $("#name").val();
   // console.log(name);
-  if (name.length > 2 && name.length < 20) {
+  if (nameValue.length > 2 && nameValue.length < 20) {
     $("#nameError").text("");
   } else {
     $("#nameError").text("Name must be between 2 and 20 characters");
