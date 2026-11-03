@@ -198,9 +198,15 @@ $("#headingTwo").mouseleave(function () {
 $("#name").keyup(function () {
   var nameValue = $("#name").val();
   // console.log(name);
-  if (nameValue.length > 2 && nameValue.length < 20) {
-    $("#nameError").text("");
+
+  // name field validation using regex
+  // const nameRegex = /^[A-Za-z ]{2,50}$/;
+  const nameRegex = /^[A-Za-z][A-Za-z .'-]{1,30}$/;
+
+  // if (nameValue.length > 2 && nameValue.length < 20) {
+  if (nameRegex.test(nameValue)) {
+    $("#nameError").text(" ");
   } else {
-    $("#nameError").text("Name must be between 2 and 20 characters");
+    $("#nameError").text("Name must be between 2 and 30 characters");
   }
 });
