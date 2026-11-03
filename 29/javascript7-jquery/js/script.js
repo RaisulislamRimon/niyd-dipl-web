@@ -49,6 +49,11 @@ nameInputElement.onblur = function () {
   headingTag.innerText = "Tuktuki";
 };
 
+nameInputElement.onkeydown = function () {
+  var headingTag = document.getElementById("heading");
+  headingTag.innerText = "This is heading";
+};
+
 var data = [
   10,
   20,
