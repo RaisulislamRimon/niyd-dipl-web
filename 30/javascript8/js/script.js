@@ -122,3 +122,9 @@ for (const s of students) {
 
 const passed = students.filter((s) => s.mark >= 60);
 console.log(passed.length, "passed");
+
+const btn = document.getElementById("btn");
+// console.log(btn);
+btn.addEventListener("click", () => {
+  alert("You clicked the button!");
+});
