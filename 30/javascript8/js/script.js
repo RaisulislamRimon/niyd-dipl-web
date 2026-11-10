@@ -109,3 +109,16 @@ const account = {
 
 account.deposit(2000);
 account.deposit(500);
+
+const students = [
+  { name: "Rahim", mark: 85 },
+  { name: "Karim", mark: 55 },
+  { name: "Ayesha", mark: 92 },
+];
+
+for (const s of students) {
+  console.log(s.name, "got", s.mark);
+}
+
+const passed = students.filter((s) => s.mark >= 60);
+console.log(passed.length, "passed");
