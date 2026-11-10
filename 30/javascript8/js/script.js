@@ -63,3 +63,17 @@ const bills = [120, 80, 250];
 // add everything together
 const totals = bills.reduce((sum, item) => sum + item, 0); // start counting from 0
 console.log("Total: ", totals);
+
+const names = ["Rahim", "Ayesha", "Karim"];
+console.log(names);
+
+names.sort();
+console.log(names);
+
+names.reverse();
+console.log(names);
+
+console.log(names.join("-"));
+
+console.log([30, 4, 100]);
+console.log([30, 4, 100].sort((a, b) => a - b));
