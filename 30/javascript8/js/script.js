@@ -43,3 +43,17 @@ console.log(nums.indexOf(20));
 // find = first item matching a rule:
 const found = nums.find((n) => n > 25);
 console.log(found);
+
+const prices = [100, 200, 300];
+console.log(prices);
+
+// map -> change every item
+const doubled = prices.map((p) => p * 2);
+console.log(doubled);
+
+// filter -> keep some item
+const cheap = prices.filter((p) => p < 250);
+console.log(cheap);
+
+// original is never touched
+console.log(prices);
