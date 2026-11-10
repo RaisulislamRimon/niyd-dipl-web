@@ -77,3 +77,35 @@ console.log(names.join("-"));
 
 console.log([30, 4, 100]);
 console.log([30, 4, 100].sort((a, b) => a - b));
+
+const phone = {
+  brand: "Samsung",
+  model: "A54",
+  price: 45000,
+};
+
+console.log(phone);
+console.log(phone.brand);
+console.log(phone["brand"]);
+
+console.log(phone.price);
+console.log(phone["price"]);
+
+phone.price = 42000;
+phone.color = "Black";
+
+console.log(phone);
+console.log(phone.color);
+console.log(phone["model"]);
+
+const account = {
+  owner: "Rahim",
+  balance: 5000,
+  deposit(amount) {
+    this.balance += amount;
+    console.log(this.owner, "now has", this.balance);
+  },
+};
+
+account.deposit(2000);
+account.deposit(500);
