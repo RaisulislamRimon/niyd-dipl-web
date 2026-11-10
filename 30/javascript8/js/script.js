@@ -57,3 +57,9 @@ console.log(cheap);
 
 // original is never touched
 console.log(prices);
+
+const bills = [120, 80, 250];
+
+// add everything together
+const totals = bills.reduce((sum, item) => sum + item, 0); // start counting from 0
+console.log("Total: ", totals);
