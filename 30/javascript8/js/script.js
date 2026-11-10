@@ -33,3 +33,13 @@ makeTea(2);
 
 const something1 = [];
 console.log(something1);
+
+const nums = [10, 20, 30, 40];
+console.log(nums);
+console.log(nums.includes(20));
+console.log(nums.includes(88));
+console.log(nums.indexOf(20));
+
+// find = first item matching a rule:
+const found = nums.find((n) => n > 25);
+console.log(found);
