@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Signika:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Signika", sans-serif;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  /* border: 1px solid gray; */
+  float: left;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  height: auto;
+}
+
+.logo {
+  height: 100px;
+  width: 90%;
+}
+
+.title {
+  height: 100px;
+  text-align: center;
+}
+
+.title h3 {
+  font-size: 50px;
+  color: cornflowerblue;
+  text-transform: capitalize;
+  line-height: 100px;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  /* background-color: pink; */
+  box-shadow: 0px 3px 5px gray;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu ul {
+  list-style: none;
+  background-color: cornflowerblue;
+  /* text-align: center; */
+  height: 50px;
+  line-height: 50px;
+}
+
+.menu ul li {
+  display: inline-block;
+  border-right: 2px solid white;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  padding: 25px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.menu ul li:last-child {
+  border: none;
+}
+
+.banner {
+  background-image: url("../img/banner.jpg");
+  width: 100%;
+  height: 340px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about {
+  width: 100%;
+  height: 400px;
+  box-shadow: 0px 3px 5px black;
+  margin: 20px 0;
+}
+
+.about h3 {
+  text-align: center;
+  padding: 15px;
+}
+
+.about img {
+  height: 250px;
+  width: 100%;
+}
+
+.about p {
+  text-align: justify;
+  padding: 15px;
+}
