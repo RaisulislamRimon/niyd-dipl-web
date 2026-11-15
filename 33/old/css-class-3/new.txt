@@ -1,0 +1,13 @@
+1. Column Size Change
+2. Column Show Hide
+3. Column Position Change 
+
+
+ Media Query
+- CSS3 Syntax
+- Using Browser Resolution create condition
+- Inside condition, there are css class
+- class will not work always, work when condition is true.
+
+Position 
+- 

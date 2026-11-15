@@ -1,0 +1,6 @@
+open microsoft word:
+
+=rand()
+=rand(4,6)
+
+
