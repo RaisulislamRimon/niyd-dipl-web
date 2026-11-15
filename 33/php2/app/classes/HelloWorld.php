@@ -4,7 +4,7 @@ namespace App\classes;
 use App\classes\Car;
 
 class HelloWorld {
-    public $message, $location, $city, $sayHello;  
+    public $message, $location, $city, $sayHello, $data = [], $student = [], $students = [];  
     public $name;
  
     public function __construct() {
@@ -84,6 +84,84 @@ class HelloWorld {
         echo '<br>';
         echo gettype($name);
         echo '<br>';
+
+
+        $this->data = [10, 20, 30, 40, 'Rimon, 12.4', true];
+
+        echo '<br>';
+        echo $this->data;
+        echo '<br>';
+        echo $this->data[0];
+        echo '<br>';
+        echo $this->data[1];
+        echo '<br>';
+        echo gettype($this->data);
+        echo '<br>';
+        foreach ($this->data as $item) {
+            echo $item . ' ';
+        }
+        echo '<br>';
+        echo gettype($data);
+        echo '<br>';
+        echo gettype($this->data);
+        print_r($this->data);
+        echo '<br>';
+
+
+        // $this->students = [
+        //     'Rimon', 
+        //     'rimon@gmail.com', 
+        //     '123'
+        // ];
+
+
+        $this->student = [
+            'name' => 'Rimon', 
+            'email' => 'rimon@gmail.com', 
+            'phone' => '123'
+        ];
+    
+        echo $this->student[0];
+        echo $this->student['name'];
+        echo '<br>';
+
+        $this->students = [
+            0 => [
+                'name' => 'Rimon', 
+                'email' => 'rimon@gmail.com', 
+                'phone' => '123'
+            ],
+            1 => [
+                'name' => 'Rahim', 
+                'email' => 'rahim@gmail.com', 
+                'phone' => '123'
+            ],
+            2 => [
+                'name' => 'Karim', 
+                'email' => 'karim@gmail.com', 
+                'phone' => [
+                    'personal' => '123',
+                    'guardian' => '456'
+                ]
+            ],
+        ];
+
+        echo $this->students[0]['name'];
+        echo '<br> Output: ' . $this->students[0]['name']. '<br>';
+
+        echo $this->students[2]['email'];
+        echo '<br>';
+
+        echo $this->students[2]['phone']['personal'];
+
+        echo '<br>';
+
+        foreach ($this->students as $student) {
+            echo '<br>';
+            echo 'Output Line - 161: <br>';
+            echo $student['name'] . $student['email'];
+            echo '<br>';
+        }
 
     }
 }
