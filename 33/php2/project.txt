@@ -9,4 +9,5 @@ commands:
 
     composer dump-autoload
 
-    
+Question: how to create class in PHP?
+

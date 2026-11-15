@@ -26,8 +26,18 @@
 
 require_once "vendor/autoload.php";
 use App\classes\HelloWorld;
+use App\classes\Car;
 
 $helloWorld = new HelloWorld();
+$helloWorld->sayHelloWorld();
 $helloWorld->index();
+// $helloWorld->index2();
+$car = new Car();
+$car->index();
+$car->getName();
+$car->getModel();
+$car->getColor();
+
+$car->allInfo();
 
 ?>
