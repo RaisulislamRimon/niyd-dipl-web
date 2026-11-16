@@ -1,5 +1,16 @@
 <?php
 
+// $data = ['name' => 'Rahim', 'city' => 'Dhaka'];
+
+// extract($data);
+
+// echo $name;
+
+// echo $name;
+
+// echo $data['name'];
+
+
 use App\classes\HelloWorld;
 
 require_once "vendor/autoload.php";
@@ -8,6 +19,3 @@ require_once "vendor/autoload.php";
 $helloWorld = new HelloWorld();
 $helloWorld->index();
 // test();
-
-
-?>

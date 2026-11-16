@@ -47,12 +47,15 @@ class HelloWorld
             ],
         ];
 
-        $students = $this->students;
+        // return view('home', ['students' => $this->students]);
+        return view('table3', ['students' => $this->students]);
 
-        include 'views/home.php';
-        include 'views/table.php';
-        include 'views/table2.php';
-        include 'views/table3.php';
+        // $students = $this->students;
+
+        // include 'views/home.php';
+        // include 'views/table.php';
+        // include 'views/table2.php';
+        // include 'views/table3.php';
     }
 }
 

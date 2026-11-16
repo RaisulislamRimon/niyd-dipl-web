@@ -12,6 +12,7 @@ function view($fileName, $data = [], $print = true)
     if (file_exists($filePath)) {
         ob_start();
         extract($data);
+        include $filePath;
         $view = ob_get_clean();
     }
 
