@@ -48,6 +48,8 @@ class HelloWorld
         ];
 
         // return view('home', ['students' => $this->students]);
+        // return view('table3', ['students' => $this->students]);
+        // return view('home', ['students' => $this->students]);
         return view('table3', ['students' => $this->students]);
 
         // $students = $this->students;
@@ -56,6 +58,16 @@ class HelloWorld
         // include 'views/table.php';
         // include 'views/table2.php';
         // include 'views/table3.php';
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
     }
 }
 

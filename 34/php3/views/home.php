@@ -16,9 +16,9 @@
         <div class="container">
             <a href="" class="navbar-brand">My PHP Project</a>
             <ul class="navbar-nav">
-                <li><a href="" class="nav-link">Home</a></li>
-                <li><a href="" class="nav-link">About</a></li>
-                <li><a href="" class="nav-link">Contact</a></li>
+                <li><a href="web.php?page=home" class="nav-link">Home</a></li>
+                <li><a href="web.php?page=about" class="nav-link">About</a></li>
+                <li><a href="web.php?page=contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>

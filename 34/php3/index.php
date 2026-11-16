@@ -17,5 +17,8 @@ require_once "vendor/autoload.php";
 
 // test();
 $helloWorld = new HelloWorld();
-$helloWorld->index();
+// $helloWorld->index();
 // test();
+// $helloWorld->contact();
+// $helloWorld->about();
+$helloWorld->index();
