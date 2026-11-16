@@ -15,7 +15,8 @@ class HelloWorld
 
     public function index()
     {
-        test();
+        // test();
+
         $this->students = [
             0 => [
                 'id' => 1,
@@ -68,6 +69,11 @@ class HelloWorld
     public function contact()
     {
         return view('contact');
+    }
+
+    public function login()
+    {
+        return view('login');
     }
 }
 

@@ -11,4 +11,6 @@ if ($_GET['page'] == 'home') {
     $helloWorld->about();
 } elseif ($_GET['page'] == 'contact') {
     $helloWorld->contact();
+} elseif ($_GET['page'] == 'login') {
+    $helloWorld->login();
 }

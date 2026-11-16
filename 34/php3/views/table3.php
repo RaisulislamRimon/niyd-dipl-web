@@ -1,61 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'includes/header.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css" />
-
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <div class="container">
-            <a href="" class="navbar-brand">My PHP Project</a>
-            <ul class="navbar-nav">
-                <li><a href="web.php?page=home" class="nav-link">Home</a></li>
-                <li><a href="web.php?page=about" class="nav-link">About</a></li>
-                <li><a href="web.php?page=contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="py-5 bg-secondary-subtle">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">All Students Info</div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
+<section class="py-5 bg-secondary-subtle">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">All Students Info</div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                            </tr>
+                            <?php foreach ($students as $student) { ?>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Mobile</th>
+                                    <td><?php echo $student['id']; ?></td>
+                                    <td><?php echo $student['name']; ?></td>
+                                    <td><?php echo $student['email']; ?></td>
+                                    <td><?php echo $student['mobile']; ?></td>
                                 </tr>
-                                <?php foreach ($students as $student) { ?>
-                                    <tr>
-                                        <td><?php echo $student['id']; ?></td>
-                                        <td><?php echo $student['name']; ?></td>
-                                        <td><?php echo $student['email']; ?></td>
-                                        <td><?php echo $student['mobile']; ?></td>
-                                    </tr>
-                                <?php } ?>
-                            </table>
-                        </div>
+                            <?php } ?>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- bootstrap js -->
-    <script src="assets/js/bootstrap.bundle.js"></script>
-
-</body>
-
-</html>
+<?php include 'includes/footer.php' ?>
