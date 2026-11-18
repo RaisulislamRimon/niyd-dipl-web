@@ -13,3 +13,14 @@ const copy = [...a];
 copy.push(99);
 
 console.log(copy);
+
+const c = [10, 20];
+const copied = c;
+
+console.log(`${c} 
+    ${copied}`);
+
+c.push(30);
+
+console.log(`${c} 
+    ${copied}`);
