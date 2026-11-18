@@ -13,3 +13,5 @@ function intro(first, ...others) {
   console.log("First: ", first);
   console.log("Others: ", others);
 }
+
+intro("a", "b", "c");
