@@ -1,0 +1,72 @@
+.box {
+  height: 300px;
+  width: 400px;
+  background: linear-gradient(90deg, red, green, yellow, orange, blue, aqua);
+  background-size: 200% 100%;
+  animation: moveGradient 3s infinite;
+}
+
+.btn-box {
+  height: 60px;
+  width: 120px;
+  background: linear-gradient(90deg, red, green, yellow, orange, blue, aqua);
+  background-size: 200% 100%;
+  /* animation: moveGradient 3s infinite; */
+  font-weight: bolder;
+  border: 1px solid orange;
+  border-radius: 5px;
+}
+
+.btn-box:hover {
+  animation: moveGradient 3s infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.btn-box1 {
+  height: 50px;
+  width: 150px;
+  border: 1px solid pink;
+  padding: 10px 25px;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-radius: 5px;
+  color: #000;
+  transition: 1s;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: larger;
+}
+
+.btn-box1:hover {
+  color: white;
+  background: linear-gradient(90deg, red, green, yellow);
+  background-size: 200% 100%;
+  animation: btnAnimation 3s infinite;
+}
+
+@keyframes btnAnimation {
+  0% {
+    background-position: 0% 25%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 75%;
+  }
+  75% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
