@@ -24,3 +24,8 @@ c.push(30);
 
 console.log(`${c} 
     ${copied}`);
+
+const user = { name: "Abdullah", age: 23 };
+const customer = { ...user };
+
+console.log(customer);
