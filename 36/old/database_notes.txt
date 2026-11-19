@@ -1,0 +1,79 @@
+-
+1
+-
+
+CREATE DATABASE employee_management;
+
+-
+2
+-
+
+use employee_management;
+CREATE TABLE employees(
+	id int, 
+    name varchar (50),
+    age int 
+);
+
+-
+3
+-
+
+INSERT INTO employees VALUES (1, 'Karim', 20);
+
+-
+4
+-
+
+CREATE DATABASE all_profiles;
+
+use all_profiles;
+CREATE TABLE Designations (
+    id int,
+    name varchar (50),
+    code varchar (20) 
+);
+
+INSERT INTO Designations VALUES (1, 'Rahim', 21);
+
+-
+5
+-
+
+CREATE DATABASE all_profiles;
+
+use all_profiles;
+CREATE TABLE Designations (
+    id int NOT NULL,
+    name varchar (50) NOT NULL,
+    code varchar (20) 
+);
+
+INSERT INTO Designations VALUES (1, 'Assistant Director', 'AD');
+
+-
+6
+-
+
+CREATE DATABASE all_profiles;
+
+use all_profiles;
+CREATE TABLE Designations (
+    id int,
+    name varchar (50),
+    code varchar (20) 
+);
+
+INSERT INTO Designations VALUES (1, 'Assistant Director', 'AD');
+
+-
+7
+-
+
+
+
+
+-
+8
+-
+

@@ -1,0 +1,36 @@
+Grid/Flex System
+    -   col-xxl-1 ......................... col-xxl-12 = 1400 <=
+    -   col-xl-1  ......................... col-xl-12  = 1200 <> 1400
+    -   col-lg-1  ......................... col-lg-12  = 992 <> 1200
+    -   col-md-1  ......................... col-md-12  = 768 <> 992
+    -   col-sm-1  ......................... col-sm-12  = 576 <> 768
+
+    
+    xxl - 1400 
+    xl  - 1200 - 1400
+    lg  - 992  - 1200
+    md  - 768  - 99
+    sm  - 576  - 768
+
+
+
+Menu
+Banner/Slider
+Card
+Nav Tabs/Pills
+Modal
+Form/Table 
+Accordion
+
+
+at first: 
+-----------
+
+semantic element
+    -   header, nav, section, main, footer 
+page er margin  - container 
+column wrapper  - row   
+column  -   col-1 ............ col-12
+
+
+

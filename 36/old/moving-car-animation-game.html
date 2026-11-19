@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Racing Game</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #111;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      /* GAME */
+      #game {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background: #6ec6ff;
+      }
+
+      /* SKY */
+      .sky {
+        position: absolute;
+        inset: 0 0 65% 0;
+        background: linear-gradient(#4db8ff, #bcecff);
+      }
+
+      /* SUN */
+      .sun {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background: #ffd54f;
+        border-radius: 50%;
+        top: 50px;
+        right: 70px;
+        box-shadow: 0 0 30px #ffd54f;
+      }
+
+      /* GRASS */
+      .grass {
+        position: absolute;
+        top: 35%;
+        bottom: 0;
+        width: 100%;
+        background: #43a047;
+      }
+
+      /* ROAD */
+      .road {
+        position: absolute;
+        top: 35%;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 55%;
+        min-width: 300px;
+        max-width: 650px;
+        background: #333;
+        overflow: hidden;
+        border-left: 8px solid #eee;
+        border-right: 8px solid #eee;
+      }
+
+      /* ROAD LINES */
+      .road-lines {
+        position: absolute;
+        inset: 0;
+      }
+
+      .road-line {
+        position: absolute;
+        width: 10px;
+        height: 100px;
+        background: white;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .line1 {
+        top: -100px;
+      }
+
+      .line2 {
+        top: 100px;
+      }
+
+      .line3 {
+        top: 300px;
+      }
+
+      .line4 {
+        top: 500px;
+      }
+
+      .line5 {
+        top: 700px;
+      }
+
+      /* PLAYER CAR */
+      #player {
+        position: absolute;
+        width: 80px;
+        height: 140px;
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+
+      .car-body {
+        position: absolute;
+        width: 80px;
+        height: 120px;
+        bottom: 0;
+        background: #e53935;
+        border-radius: 18px 18px 12px 12px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* CAR ROOF */
+      .car-roof {
+        position: absolute;
+        width: 58px;
+        height: 62px;
+        left: 11px;
+        top: 15px;
+        background: #c62828;
+        border-radius: 18px 18px 8px 8px;
+      }
+
+      /* WINDOWS */
+      .window-front {
+        position: absolute;
+        width: 44px;
+        height: 25px;
+        left: 18px;
+        top: 21px;
+        background: #90caf9;
+        border-radius: 10px 10px 4px 4px;
+      }
+
+      .window-back {
+        position: absolute;
+        width: 44px;
+        height: 20px;
+        left: 18px;
+        top: 49px;
+        background: #64b5f6;
+        border-radius: 4px 4px 8px 8px;
+      }
+
+      /* HEADLIGHTS */
+      .light {
+        position: absolute;
+        width: 12px;
+        height: 16px;
+        background: #fff59d;
+        border-radius: 5px;
+        top: 5px;
+      }
+
+      .light.left {
+        left: 10px;
+      }
+
+      .light.right {
+        right: 10px;
+      }
+
+      /* WHEELS */
+      .wheel {
+        position: absolute;
+        width: 18px;
+        height: 35px;
+        background: #111;
+        border-radius: 8px;
+        top: 35px;
+      }
+
+      .wheel.left {
+        left: -9px;
+      }
+
+      .wheel.right {
+        right: -9px;
+      }
+
+      .wheel2 {
+        top: 90px;
+      }
+
+      /* ENEMY CAR */
+      .enemy {
+        position: absolute;
+        width: 70px;
+        height: 120px;
+        background: #1565c0;
+        border-radius: 15px;
+        z-index: 8;
+      }
+
+      .enemy::before {
+        content: "";
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        background: #90caf9;
+        top: 15px;
+        left: 12px;
+        border-radius: 8px;
+      }
+
+      .enemy::after {
+        content: "";
+        position: absolute;
+        width: 55px;
+        height: 10px;
+        background: #111;
+        left: 8px;
+        bottom: 15px;
+        border-radius: 5px;
+      }
+
+      /* HUD */
+      #hud {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 20;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px #000;
+      }
+
+      #hud div {
+        margin-bottom: 8px;
+      }
+
+      /* GAME OVER */
+      #gameOver {
+        display: none;
+        position: absolute;
+        z-index: 50;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #gameOver h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
+
+      #gameOver button {
+        padding: 14px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        background: #ff5722;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* MOBILE CONTROLS */
+      #controls {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        z-index: 30;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 25px;
+        pointer-events: none;
+      }
+
+      .control-group {
+        display: flex;
+        gap: 15px;
+        pointer-events: auto;
+      }
+
+      .control-btn {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        border: 2px solid white;
+        background: rgba(0, 0, 0, 0.55);
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+        touch-action: none;
+      }
+
+      .control-btn:active {
+        background: rgba(255, 87, 34, 0.8);
+      }
+
+      @media (min-width: 800px) {
+        #controls {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="game">
+      <div class="sky"></div>
+      <div class="sun"></div>
+      <div class="grass"></div>
+
+      <div class="road">
+        <div class="road-lines">
+          <div class="road-line line1"></div>
+          <div class="road-line line2"></div>
+          <div class="road-line line3"></div>
+          <div class="road-line line4"></div>
+          <div class="road-line line5"></div>
+        </div>
+      </div>
+
+      <!-- PLAYER -->
+      <div id="player">
+        <div class="car-body">
+          <div class="car-roof"></div>
+
+          <div class="window-front"></div>
+          <div class="window-back"></div>
+
+          <div class="light left"></div>
+          <div class="light right"></div>
+        </div>
+
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+
+        <div class="wheel left wheel2"></div>
+        <div class="wheel right wheel2"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="hud">
+        <div>🏆 Score: <span id="score">0</span></div>
+        <div>🚗 Speed: <span id="speed">0</span></div>
+      </div>
+
+      <!-- GAME OVER -->
+      <div id="gameOver">
+        <h1>GAME OVER</h1>
+
+        <p>
+          Score:
+          <strong id="finalScore">0</strong>
+        </p>
+
+        <br />
+
+        <button id="restart">🔄 Restart Game</button>
+      </div>
+
+      <!-- MOBILE CONTROLS -->
+      <div id="controls">
+        <div class="control-group">
+          <button class="control-btn" id="leftBtn">◀</button>
+
+          <button class="control-btn" id="rightBtn">▶</button>
+        </div>
+
+        <div class="control-group">
+          <button class="control-btn" id="brakeBtn">🛑</button>
+
+          <button class="control-btn" id="gasBtn">🚀</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* =========================
+     GAME VARIABLES
+  ========================= */
+
+      const game = document.getElementById("game");
+      const player = document.getElementById("player");
+
+      const scoreElement = document.getElementById("score");
+      const speedElement = document.getElementById("speed");
+
+      const gameOverScreen = document.getElementById("gameOver");
+      const finalScore = document.getElementById("finalScore");
+      const restartButton = document.getElementById("restart");
+
+      const road = document.querySelector(".road");
+
+      let playerX = 50;
+
+      let speed = 5;
+
+      let score = 0;
+
+      let gameRunning = true;
+
+      let accelerating = false;
+      let braking = false;
+
+      let movingLeft = false;
+      let movingRight = false;
+
+      let enemies = [];
+
+      let lastEnemyTime = 0;
+
+      /* =========================
+     KEYBOARD
+  ========================= */
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+          movingLeft = true;
+        }
+
+        if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+          movingRight = true;
+        }
+
+        if (event.key === "ArrowUp" || event.key.toLowerCase() === "w") {
+          accelerating = true;
+        }
+
+        if (
+          event.key === "ArrowDown" ||
+          event.key.toLowerCase() === "s" ||
+          event.code === "Space"
+        ) {
+          braking = true;
+        }
+      });
+
+      document.addEventListener("keyup", function (event) {
+        if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+          movingLeft = false;
+        }
+
+        if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+          movingRight = false;
+        }
+
+        if (event.key === "ArrowUp" || event.key.toLowerCase() === "w") {
+          accelerating = false;
+        }
+
+        if (
+          event.key === "ArrowDown" ||
+          event.key.toLowerCase() === "s" ||
+          event.code === "Space"
+        ) {
+          braking = false;
+        }
+      });
+
+      /* =========================
+     MOBILE BUTTONS
+  ========================= */
+
+      function holdButton(button, onStart, onEnd) {
+        button.addEventListener("pointerdown", function (event) {
+          event.preventDefault();
+
+          onStart();
+        });
+
+        button.addEventListener("pointerup", function (event) {
+          event.preventDefault();
+
+          onEnd();
+        });
+
+        button.addEventListener("pointerleave", onEnd);
+
+        button.addEventListener("pointercancel", onEnd);
+      }
+
+      holdButton(
+        document.getElementById("leftBtn"),
+        () => (movingLeft = true),
+        () => (movingLeft = false),
+      );
+
+      holdButton(
+        document.getElementById("rightBtn"),
+        () => (movingRight = true),
+        () => (movingRight = false),
+      );
+
+      holdButton(
+        document.getElementById("gasBtn"),
+        () => (accelerating = true),
+        () => (accelerating = false),
+      );
+
+      holdButton(
+        document.getElementById("brakeBtn"),
+        () => (braking = true),
+        () => (braking = false),
+      );
+
+      /* =========================
+     ROAD MOVEMENT
+  ========================= */
+
+      let roadOffset = 0;
+
+      function moveRoad() {
+        roadOffset += speed;
+
+        if (roadOffset > 200) {
+          roadOffset = 0;
+        }
+
+        document.querySelectorAll(".road-line").forEach(function (line, index) {
+          let y = (index * 200 + roadOffset) % 800;
+
+          line.style.top = y - 100 + "px";
+        });
+      }
+
+      /* =========================
+     PLAYER MOVEMENT
+  ========================= */
+
+      function movePlayer() {
+        if (movingLeft) {
+          playerX -= 0.8;
+        }
+
+        if (movingRight) {
+          playerX += 0.8;
+        }
+
+        /*
+      Keep car inside road.
+    */
+
+        if (playerX < 32) {
+          playerX = 32;
+        }
+
+        if (playerX > 68) {
+          playerX = 68;
+        }
+
+        player.style.left = playerX + "%";
+      }
+
+      /* =========================
+     SPEED
+  ========================= */
+
+      function updateSpeed() {
+        if (accelerating) {
+          speed += 0.08;
+
+          if (speed > 12) {
+            speed = 12;
+          }
+        } else if (braking) {
+          speed -= 0.15;
+
+          if (speed < 1) {
+            speed = 1;
+          }
+        } else {
+          /*
+        Natural slowing
+      */
+
+          speed -= 0.02;
+
+          if (speed < 5) {
+            speed = 5;
+          }
+        }
+
+        speedElement.textContent = Math.round(speed * 10);
+      }
+
+      /* =========================
+     CREATE ENEMY
+  ========================= */
+
+      function createEnemy() {
+        const enemy = document.createElement("div");
+
+        enemy.classList.add("enemy");
+
+        /*
+      Random lane.
+    */
+
+        const lanePositions = [25, 50, 75];
+
+        const lane =
+          lanePositions[Math.floor(Math.random() * lanePositions.length)];
+
+        enemy.style.left = lane + "%";
+
+        enemy.style.top = "-150px";
+
+        road.appendChild(enemy);
+
+        enemies.push({
+          element: enemy,
+          y: -150,
+          x: lane,
+        });
+      }
+
+      /* =========================
+     ENEMY MOVEMENT
+  ========================= */
+
+      function moveEnemies() {
+        for (let i = enemies.length - 1; i >= 0; i--) {
+          const enemy = enemies[i];
+
+          enemy.y += speed;
+
+          enemy.element.style.top = enemy.y + "px";
+
+          /*
+        Remove enemy when
+        it leaves screen.
+      */
+
+          if (enemy.y > road.clientHeight + 150) {
+            enemy.element.remove();
+
+            enemies.splice(i, 1);
+
+            score += 10;
+
+            scoreElement.textContent = score;
+
+            continue;
+          }
+
+          /*
+        Collision
+      */
+
+          if (checkCollision(enemy.element)) {
+            endGame();
+
+            return;
+          }
+        }
+      }
+
+      /* =========================
+     COLLISION DETECTION
+  ========================= */
+
+      function checkCollision(enemy) {
+        const playerRect = player.getBoundingClientRect();
+
+        const enemyRect = enemy.getBoundingClientRect();
+
+        return !(
+          playerRect.bottom < enemyRect.top ||
+          playerRect.top > enemyRect.bottom ||
+          playerRect.right < enemyRect.left ||
+          playerRect.left > enemyRect.right
+        );
+      }
+
+      /* =========================
+     GAME OVER
+  ========================= */
+
+      function endGame() {
+        gameRunning = false;
+
+        finalScore.textContent = score;
+
+        gameOverScreen.style.display = "flex";
+      }
+
+      /* =========================
+     RESTART
+  ========================= */
+
+      restartButton.addEventListener("click", function () {
+        enemies.forEach((enemy) => enemy.element.remove());
+
+        enemies = [];
+
+        playerX = 50;
+
+        speed = 5;
+
+        score = 0;
+
+        gameRunning = true;
+
+        gameOverScreen.style.display = "none";
+
+        scoreElement.textContent = "0";
+      });
+
+      /* =========================
+     MAIN GAME LOOP
+  ========================= */
+
+      function gameLoop(timestamp) {
+        if (gameRunning) {
+          movePlayer();
+
+          updateSpeed();
+
+          moveRoad();
+
+          moveEnemies();
+
+          /*
+        Create enemies periodically.
+      */
+
+          if (timestamp - lastEnemyTime > 1200) {
+            createEnemy();
+
+            lastEnemyTime = timestamp;
+          }
+        }
+
+        requestAnimationFrame(gameLoop);
+      }
+
+      requestAnimationFrame(gameLoop);
+    </script>
+  </body>
+</html>
