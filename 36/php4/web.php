@@ -5,6 +5,11 @@ use App\classes\HelloWorld;
 
 $helloWorld = new HelloWorld();
 
+// echo '<pre>';
+// print_r(($_GET));
+// print_r(($_GET['id']));
+// echo '</pre>';
+
 if ($_GET['page'] == 'home') {
     $helloWorld->index();
 } elseif ($_GET['page'] == 'about') {
@@ -13,4 +18,8 @@ if ($_GET['page'] == 'home') {
     $helloWorld->contact();
 } elseif ($_GET['page'] == 'login') {
     $helloWorld->login();
+} elseif ($_GET['page'] == 'products') {
+    $helloWorld->products();
+} elseif ($_GET['page'] == 'read-more') {
+    $helloWorld->readMore($_GET['id']);
 }

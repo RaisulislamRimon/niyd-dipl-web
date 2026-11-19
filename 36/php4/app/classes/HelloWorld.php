@@ -1,6 +1,7 @@
 <?php
 
 namespace App\classes;
+use App\classes\Products;
 
 class HelloWorld
 {
@@ -64,6 +65,20 @@ class HelloWorld
     public function about()
     {
         return view('about');
+    }
+
+    public function products()
+    {
+        $products = new Products();
+        $products = $products->getAllProduct();
+        return view('products', ['products' => $products]);
+    }
+
+    public function readMore($id)
+    {
+        $product = new Products();
+        $singleProduct = $product->getProductById($id);
+        return view('read-more', ['singleProduct' => $singleProduct]);
     }
 
     public function contact()
