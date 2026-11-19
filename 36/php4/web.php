@@ -2,12 +2,15 @@
 
 require_once 'vendor/autoload.php';
 use App\classes\HelloWorld;
+use App\classes\MakeFullName;
 
 $helloWorld = new HelloWorld();
 
 // echo '<pre>';
-// print_r(($_GET));
-// print_r(($_GET['id']));
+// // print_r(($_GET));
+// print_r(($_POST));
+// // echo $_POST;
+// // print_r(($_GET['id']));
 // echo '</pre>';
 
 if ($_GET['page'] == 'home') {
@@ -22,4 +25,7 @@ if ($_GET['page'] == 'home') {
     $helloWorld->products();
 } elseif ($_GET['page'] == 'read-more') {
     $helloWorld->readMore($_GET['id']);
+} elseif ($_POST['full_name_button']) {
+    $makeFullName = new MakeFullName($_POST);
+    $makeFullName->getFullName();
 }
