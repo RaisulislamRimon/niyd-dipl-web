@@ -5,11 +5,22 @@
 $host = 'localhost';
 $dbname = 'school_db';
 $user = 'root';
-$pass = ''; // xampp default password is empty 
+$pass = ''; // XAMPP default password is empty
 
 try {
-    $pdo = new PDO('mysql:host=$host;dbname=$dbname;charset=utf8mb3, $user, $pass');
+
+    $pdo = new PDO(
+        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+        $user,
+        $pass
+    );
+
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo 'Connected successfully';
+
 } catch (PDOException $e) {
+
     die('Database connection failed: ' . $e->getMessage());
+
 }
