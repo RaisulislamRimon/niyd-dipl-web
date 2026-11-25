@@ -1,0 +1,35 @@
+This source doesn't allow Delomic to access the media directly.
+
+CSS
+Inline CSS
+Internal CSS
+External CSS
+
+        Declaration
+          ^
+
+<p style=""></p>
+
+Declaration = Property : Value
+
+internal selector > 
+    * all selector
+    . class selector
+    # id selector 
+    (tagname) tag selector 
+
+
+
+<html>
+    <head>
+        <style>
+            selector {
+                declarator ; 
+            }
+        </style>
+    </head>
+</html>
+
+
+html এর head tag এর মধ্যে style tag এর মধ্যে selector ব্যবহার করে internal css লেখা হয়। 
+

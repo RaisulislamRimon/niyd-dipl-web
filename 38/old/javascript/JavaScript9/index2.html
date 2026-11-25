@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class something {
+        #balance = 1000;
+
+        checkBalance() {
+          console.log(this.#balance);
+        }
+      }
+
+      const b = new something();
+
+      console.log(b.checkBalance());
+
+      b.checkBalance();
+    </script>
+  </body>
+</html>

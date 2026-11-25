@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moving Car Animation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+
+      .scene {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background: linear-gradient(
+          to bottom,
+          #87ceeb 0%,
+          #87ceeb 65%,
+          #66bb6a 65%,
+          #66bb6a 75%,
+          #333 75%,
+          #333 100%
+        );
+      }
+
+      /* Sun */
+      .sun {
+        width: 90px;
+        height: 90px;
+        background: #ffd54f;
+        border-radius: 50%;
+        position: absolute;
+        top: 60px;
+        right: 100px;
+        box-shadow: 0 0 40px #ffd54f;
+      }
+
+      /* Clouds */
+      .cloud {
+        width: 120px;
+        height: 40px;
+        background: white;
+        border-radius: 40px;
+        position: absolute;
+      }
+
+      .cloud::before,
+      .cloud::after {
+        content: "";
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+      }
+
+      .cloud::before {
+        width: 55px;
+        height: 55px;
+        left: 20px;
+        top: -25px;
+      }
+
+      .cloud::after {
+        width: 70px;
+        height: 70px;
+        right: 15px;
+        top: -35px;
+      }
+
+      .cloud1 {
+        top: 100px;
+        left: 10%;
+        animation: cloudMove 18s linear infinite;
+      }
+
+      .cloud2 {
+        top: 180px;
+        left: 60%;
+        transform: scale(0.7);
+        animation: cloudMove 25s linear infinite;
+      }
+
+      @keyframes cloudMove {
+        from {
+          left: -150px;
+        }
+
+        to {
+          left: 110%;
+        }
+      }
+
+      /* Road */
+      .road {
+        width: 100%;
+        height: 25%;
+        position: absolute;
+        bottom: 0;
+        background: #333;
+      }
+
+      .road-line {
+        position: absolute;
+        top: 48%;
+        width: 100%;
+        height: 10px;
+        overflow: hidden;
+      }
+
+      .road-line::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          to right,
+          white 0px,
+          white 80px,
+          transparent 80px,
+          transparent 150px
+        );
+
+        animation: roadMove 1s linear infinite;
+      }
+
+      @keyframes roadMove {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-150px);
+        }
+      }
+
+      /* Car */
+      .car {
+        width: 260px;
+        height: 100px;
+        position: absolute;
+        bottom: 16%;
+        left: -300px;
+
+        animation:
+          carMove 7s linear infinite,
+          carBounce 0.4s ease-in-out infinite alternate;
+      }
+
+      @keyframes carMove {
+        0% {
+          left: -300px;
+        }
+
+        100% {
+          left: 110%;
+        }
+      }
+
+      @keyframes carBounce {
+        from {
+          transform: translateY(0);
+        }
+
+        to {
+          transform: translateY(-3px);
+        }
+      }
+
+      /* Car body */
+      .car-body {
+        width: 240px;
+        height: 70px;
+        background: #ff5722;
+        border-radius: 25px 50px 20px 20px;
+        position: absolute;
+        bottom: 15px;
+        left: 10px;
+      }
+
+      /* Car roof */
+      .car-roof {
+        width: 130px;
+        height: 60px;
+        background: #ff5722;
+        position: absolute;
+        top: -40px;
+        left: 55px;
+        border-radius: 60px 60px 0 0;
+      }
+
+      /* Windows */
+      .window {
+        position: absolute;
+        top: 8px;
+        height: 40px;
+        background: #b3e5fc;
+      }
+
+      .window-left {
+        width: 55px;
+        left: 10px;
+        border-radius: 40px 5px 5px 5px;
+      }
+
+      .window-right {
+        width: 50px;
+        right: 10px;
+        border-radius: 5px 40px 5px 5px;
+      }
+
+      /* Lights */
+      .headlight {
+        width: 15px;
+        height: 15px;
+        background: #fff176;
+        border-radius: 50%;
+        position: absolute;
+        right: -2px;
+        top: 30px;
+      }
+
+      .backlight {
+        width: 10px;
+        height: 18px;
+        background: #b71c1c;
+        position: absolute;
+        left: -2px;
+        top: 30px;
+        border-radius: 5px;
+      }
+
+      /* Wheels */
+      .wheel {
+        width: 55px;
+        height: 55px;
+        background: #111;
+        border: 7px solid #222;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -15px;
+
+        animation: wheelSpin 0.5s linear infinite;
+      }
+
+      .wheel::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #aaa;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .wheel-left {
+        left: 35px;
+      }
+
+      .wheel-right {
+        right: 35px;
+      }
+
+      @keyframes wheelSpin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Trees */
+      .tree {
+        position: absolute;
+        bottom: 25%;
+        width: 20px;
+        height: 90px;
+        background: #795548;
+      }
+
+      .tree::before {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: #2e7d32;
+        border-radius: 50%;
+        top: -55px;
+        left: -30px;
+      }
+
+      .tree1 {
+        left: 15%;
+      }
+
+      .tree2 {
+        left: 50%;
+        transform: scale(0.8);
+      }
+
+      .tree3 {
+        right: 15%;
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="scene">
+      <div class="sun"></div>
+
+      <div class="cloud cloud1"></div>
+      <div class="cloud cloud2"></div>
+
+      <div class="tree tree1"></div>
+      <div class="tree tree2"></div>
+      <div class="tree tree3"></div>
+
+      <div class="road">
+        <div class="road-line"></div>
+      </div>
+
+      <div class="car">
+        <div class="car-body">
+          <div class="car-roof">
+            <div class="window window-left"></div>
+            <div class="window window-right"></div>
+          </div>
+
+          <div class="headlight"></div>
+          <div class="backlight"></div>
+        </div>
+
+        <div class="wheel wheel-left"></div>
+        <div class="wheel wheel-right"></div>
+      </div>
+    </div>
+  </body>
+</html>
