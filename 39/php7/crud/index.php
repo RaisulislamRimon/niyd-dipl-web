@@ -1,28 +1,50 @@
 <?php
-
-require 'db.php';
-
-$stmt = $pdo->query('select * from students order by id desc');
-
+require "db.php";
+$stmt = $pdo->query("SELECT * FROM students ORDER BY id DESC");
 $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
+    <meta charset="utf-8">
+    <title>Student List</title>
 </head>
 
 <body>
-    <h2> Students List </h2>
+    <h2>Student List</h2>
+    <a href="create.php">+ Add New Student</a><br><br>
 
-    <a href="create.php">
-        Add New Student
-    </a>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+        <?php foreach ($students as $s): ?>
+            <tr>
+                <td>
+                    <?= $s["id"] ?>
+                </td>
+                <td>
+                    <?= htmlspecialchars($s["name"]) ?>
+                </td>
+                <td>
+                    <?= htmlspecialchars($s["email"]) ?>
+                </td>
+                <td>
+                    <?= htmlspecialchars($s["phone"]) ?>
+                </td>
+                <td>
+                    <a href="edit.php?id=<?= $s["id"] ?>">Edit</a> |
+                    <a href="delete.php?id=<?= $s["id"] ?>" onclick="return confirm('Delete?')">Delete</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 
 </html>
