@@ -1,0 +1,55 @@
+.header-bg {
+  min-height: 700px;
+  width: 100%;
+  background-image: url("../img/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.header-bg .navbar-nav li a:hover {
+  background-color: rgb(13, 110, 253);
+  color: white;
+  border-radius: 6px;
+}
+
+.my-caption {
+  color: white;
+  margin-top: 30%;
+}
+
+.slider-image {
+  float: right;
+  margin-top: 20%;
+}
+
+.about-content-margin {
+  margin-top: 100px;
+}
+
+.portfolio-img-hover {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+  opacity: 0.5;
+  display: none;
+  transition: 1s;
+}
+
+.portfolio-overlay:hover .portfolio-img-hover {
+  display: block;
+}
+
+.footer-bg {
+  min-height: 500px;
+  background-image: url("../img/footer-bg.png");
+  /* background-image: url("../img/footer_extra.png"); */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.footer-section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
